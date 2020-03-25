@@ -7,7 +7,7 @@ package mykitchengarden;
 
 /**
  *
- * @author Kasper
+ * @author Kasper jacob
  */
 public class MyKitchenGarden {
 

@@ -11,4 +11,5 @@ package mykitchengarden;
  */
 public class NewClass1 {
     
+    //todo code here
 }

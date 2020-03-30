@@ -37,7 +37,7 @@ public class MyKitchenGarden {
             // 4. Process the result set
             while (myRs.next()) {
                 System.out.println(myRs.getString("common_name") + ", " + myRs.getString("latin_name"));
-            }
+            } 
 
         } catch (Exception exc) {
             exc.printStackTrace();

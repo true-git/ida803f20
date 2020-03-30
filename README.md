@@ -12,4 +12,4 @@ Set up the database 'kitchengarden' by running the sql script named DB_P8_Script
 
 Install the JDBC driver - google it! :)
 
-Now you can run the Java application JDBC_P8.java that connects java with your local MySQL database.
+Now you can run the Java application MyKitchenGarden.java that connects java with your local MySQL database and makes a query.

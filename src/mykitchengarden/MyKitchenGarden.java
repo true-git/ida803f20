@@ -7,7 +7,7 @@ package mykitchengarden;
 import java.sql.*;
 /**
  *
- * @author Kasper
+ * @author Kasper jacob
  */
 public class MyKitchenGarden {
 

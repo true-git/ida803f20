@@ -26,7 +26,7 @@ public class MyKitchenGarden {
 
         try {
             // 1. Get a connection to database
-            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kitchengarden", user, pass);
+            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kitchengarden?serverTimezone=UTC", user, pass);
 
             // 2. Create a statement
             myStmt = myConn.createStatement();

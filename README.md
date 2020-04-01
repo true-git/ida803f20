@@ -16,3 +16,10 @@ Now you can run the Java application MyKitchenGarden.java that connects java wit
 
 From now on before working on code, remember to make a pull first (Team -> Git -> Remote -> Pull).
 When you finish writing your code, the procedure is to commit (Team -> Commit) and then push (Team -> Git -> Remote -> Push)
+
+
+Known potentially bugs:
+
+After adding the Library "mysql-connector-java-8.0.19.jar", when making a pull request, a warning can come up. There are 3 options: revert, someting, cancel. Choose revert. 
+Then add the library agian to your project. After this, go to the files section in the project, and locate the file "gitignore". In this file add: "mysql-connector-java-8.0.19.jar" below ".nb-gradle/" 
+Now netbeans should ignore this file when using Git.

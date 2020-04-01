@@ -13,3 +13,6 @@ Set up the database 'kitchengarden' by running the sql script named DB_P8_Script
 Install the JDBC driver - google it! :)
 
 Now you can run the Java application MyKitchenGarden.java that connects java with your local MySQL database and makes a query.
+
+From now on before working on code, remember to make a pull first (Team -> Git -> Remote -> Pull).
+When you finish writing your code, the procedure is to commit (Team -> Commit) and then push (Team -> Git -> Remote -> Push)

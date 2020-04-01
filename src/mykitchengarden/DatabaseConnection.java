@@ -50,7 +50,7 @@ public class DatabaseConnection {
     private void initiate() {
         try {
             // 1. Get a connection to database
-            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbName, user, pass);
+            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbName + "?serverTimezone=UTC", user, pass);
 
             // 2. Create a statement
             myStmt = myConn.createStatement();

@@ -10,7 +10,8 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 /**
  *
- * @author Kasper jacob
+ * @author Kasper
+ * This is purely a test text to test a pull. Please remember to delete me again
  */
 public class MyKitchenGarden extends Application {
     

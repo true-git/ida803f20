@@ -23,3 +23,6 @@ Known potentially bugs:
 After adding the Library "mysql-connector-java-8.0.19.jar", when making a pull request, a warning can come up. There are 3 options: revert, someting, cancel. Choose revert. 
 Then add the library agian to your project. After this, go to the files section in the project, and locate the file "gitignore". In this file add: "mysql-connector-java-8.0.19.jar" below ".nb-gradle/" 
 Now netbeans should ignore this file when using Git.
+
+Cant find the javafx library:
+Add the library to your project. The library to be added is javafx13.

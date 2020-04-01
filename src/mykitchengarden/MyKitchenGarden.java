@@ -4,45 +4,31 @@
  * and open the template in the editor.
  */
 package mykitchengarden;
-import java.sql.*;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 /**
  *
  * @author Kasper jacob
  */
-public class MyKitchenGarden {
+public class MyKitchenGarden extends Application {
+    
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        DatabaseConnection dbc = new DatabaseConnection();
+        Scene scene = new Scene(new StackPane(), 900, 600);
+        //scene.getStylesheets().add("/mykitchengarden/layoutstyles.css");
+                
+        primaryStage.setTitle("PlantLet");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        Connection myConn = null;
-        Statement myStmt = null;
-        ResultSet myRs = null;
-
-        String user = "kitchengardener";
-        String pass = "greenfingers";
-
-        try {
-            // 1. Get a connection to database
-            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kitchengarden", user, pass);
-
-            // 2. Create a statement
-            myStmt = myConn.createStatement();
-
-            // 3. Execute SQL query
-            myRs = myStmt.executeQuery("select * from plants");
-
-            // 4. Process the result set
-            while (myRs.next()) {
-                System.out.println(myRs.getString("common_name") + ", " + myRs.getString("latin_name"));
-            } 
-
-        } catch (Exception exc) {
-            exc.printStackTrace();
-        }
-        
+        launch(args);        
     }
-    
 }

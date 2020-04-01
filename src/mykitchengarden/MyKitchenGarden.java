@@ -17,6 +17,11 @@ public class MyKitchenGarden extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         DatabaseConnection dbc = new DatabaseConnection();
+        dbc.executeQuery("Select * from plants");
+        while(dbc.myRs.next()) {
+            System.out.println(dbc.myRs.getString("common_name") + ", " + dbc.myRs.getString("latin_name") +
+                    ", " + dbc.myRs.getString("climate_zone"));
+        }
         Scene scene = new Scene(new StackPane(), 900, 600);
         //scene.getStylesheets().add("/mykitchengarden/layoutstyles.css");
                 

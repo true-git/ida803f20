@@ -26,3 +26,4 @@ Now netbeans should ignore this file when using Git.
 
 Cant find the javafx library:
 Add the library to your project. The library to be added is javafx13.
+If you get an javafx error - then try --> properties --> run --> and change the file location to a library location. hint: look at an earlier project that uses javafx) 

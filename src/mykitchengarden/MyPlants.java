@@ -31,7 +31,7 @@ private Button back_button;
         
         //scene is created and put inside the primaryStage
         Scene my_plants_scene = new Scene(layout, 357, 667);
-        //scene.getStylesheets().add("/mykitchengarden/layoutstyles.css");
+        my_plants_scene.getStylesheets().add("mykitchengarden/layoutstyles.css");
         primaryStage.setTitle("PlantLet");
         primaryStage.setScene(my_plants_scene);
         primaryStage.show();

@@ -34,6 +34,7 @@ public class MyKitchenGarden extends Application {
         //Button to change page to my plants
         Button button_my_plants = new Button();
         button_my_plants.setText("Mine planter");
+        button_my_plants.setId("menu_button");
 
         //Button to change page to my plants
         Button button_plant_library= new Button();
@@ -71,12 +72,11 @@ public class MyKitchenGarden extends Application {
         layout.setCenter(vbox_buttons_menu);
         
         //scene is created and put inside the primaryStage
-        Scene menuScene = new Scene(layout, 357, 667);
-        //scene.getStylesheets().add("/mykitchengarden/layoutstyles.css");
+        Scene menu_scene = new Scene(layout, 357, 667);
+        menu_scene.getStylesheets().add("mykitchengarden/layoutstyles.css");        
         primaryStage.setTitle("PlantLet");
-        primaryStage.setScene(menuScene);
+        primaryStage.setScene(menu_scene);
         primaryStage.show();
-                 
     }
 
     /**

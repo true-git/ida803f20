@@ -10,3 +10,6 @@ and open the template in the editor.
 #menu_button {
     -fx-background-color: #CCFF99;
 }
+#button_login {
+   -fx-background-color: #CCFF99; 
+}

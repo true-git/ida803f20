@@ -5,7 +5,6 @@
  */
 package mykitchengarden;
 
-import java.io.FileInputStream;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -29,30 +28,29 @@ public class Login extends Application {
     public void start (Stage primaryStage) throws Exception {
         
         //Creating logo
-        FileInputStream logo_stream = new FileInputStream("C:\\Users\\bruger\\Desktop\\plant.png");
-        Image logo_image = new Image(logo_stream);
-        ImageView logo_view = new ImageView(logo_image);
+        Image logo_image = new Image("https://i.imgur.com/cvhMPnE.png");
+        ImageView logo_view = new ImageView();
+        logo_view.setImage(logo_image);
         
         //Setting the fit height and width of the logo
         logo_view.setFitHeight(178); 
         logo_view.setFitWidth(205);
         
         //Enter icon for the login button
-        FileInputStream enter_stream = new FileInputStream("C:\\Users\\bruger\\Desktop\\enter.png");
-        Image enter_image = new Image(enter_stream);
-        ImageView enter_icon = new ImageView(enter_image);
+        Image enter_image = new Image("https://i.imgur.com/NgAYbPw.png");
+        ImageView enter_view = new ImageView();
+        enter_view.setImage(enter_image);
         
         //Setting the fit height and width of the login image
-        enter_icon.setFitHeight(20); 
-        enter_icon.setFitWidth(20);
+        enter_view.setFitHeight(20); 
+        enter_view.setFitWidth(20);
         
         //Button to log in
-        Button login_button = new Button("Log på",enter_icon);
-//        login_button.setStyle("-fx-background-color: transparent;");
-        login_button.setId("button_login");
+        Button login_button = new Button("Log på",enter_view);
+        login_button.setId("button_logo");
         
         //Button to sign up
-        Button signup_button = new Button("Tilmeld dig");
+        Button signup_button = new Button("Tilmeld dig"); 
         
         //Button to access the app as a guest
         Button guest_button = new Button("Gæst");

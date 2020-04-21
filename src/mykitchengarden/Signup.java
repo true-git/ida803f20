@@ -5,7 +5,6 @@
  */
 package mykitchengarden;
 
-import java.io.FileInputStream;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -35,50 +34,50 @@ public class Signup extends Application {
     public void start (Stage primaryStage) throws Exception {
         
         //Creating logo
-        FileInputStream inputstream1 = new FileInputStream("C:\\Users\\bruger\\Desktop\\plant.png");
-        Image logo_image = new Image(inputstream1);
-        ImageView logo_view = new ImageView(logo_image);
+        Image logo_image = new Image("https://i.imgur.com/cvhMPnE.png");
+        ImageView logo_view = new ImageView();
+        logo_view.setImage(logo_image);
         
         //Setting the fit height and width of the logo 
         logo_view.setFitHeight(150); 
         logo_view.setFitWidth(150);
         
         //Creating user logo
-        FileInputStream inputstream2 = new FileInputStream("C:\\Users\\bruger\\Desktop\\user.png");
-        Image user_image = new Image(inputstream2);
-        ImageView user_view = new ImageView(user_image);
+        Image user_image = new Image("https://i.imgur.com/8hyDtqk.png");
+        ImageView user_view = new ImageView();
+        user_view.setImage(user_image);
         
         //Setting the fit height and width of the user logo 
         user_view.setFitHeight(50); 
         user_view.setFitWidth(50);
         
         //Back icon for the back button
-        FileInputStream back_stream = new FileInputStream("C:\\Users\\bruger\\Desktop\\back.png");
-        Image back_image = new Image(back_stream);
-        ImageView back_icon = new ImageView(back_image);
+        Image back_image = new Image("https://i.imgur.com/RakGKSy.png");
+        ImageView back_view = new ImageView();
+        back_view.setImage(back_image);
         
         //Setting the fit height and width of the login image
-        back_icon.setFitHeight(30); 
-        back_icon.setFitWidth(30);
+        back_view.setFitHeight(30); 
+        back_view.setFitWidth(30);
         
         //Button to go back
-        Button back_button = new Button("",back_icon);
+        Button back_button = new Button("",back_view);
         back_button.setAlignment(Pos.TOP_LEFT);
-        back_button.setStyle("-fx-background-color: transparent;");
+        back_button.setId("button_logo");
         
         //Enter icon for the signup button
-        FileInputStream enter_stream = new FileInputStream("C:\\Users\\bruger\\Desktop\\enter.png");
-        Image enter_image = new Image(enter_stream);
-        ImageView enter_icon = new ImageView(enter_image);
+        Image enter_image = new Image("https://i.imgur.com/NgAYbPw.png");
+        ImageView enter_view = new ImageView();
+        enter_view.setImage(enter_image);
         
         //Setting the fit height and width of the login image
-        enter_icon.setFitHeight(30); 
-        enter_icon.setFitWidth(30);
+        enter_view.setFitHeight(30); 
+        enter_view.setFitWidth(30);
         
         //Button to sign up
-        Button signup_button = new Button("Tilmeld",enter_icon);
-        signup_button.setAlignment(Pos.CENTER);
-        signup_button.setStyle("-fx-background-color: transparent;");
+        Button signup_button = new Button("Tilmeld",enter_view);
+        signup_button.setAlignment(Pos.BOTTOM_RIGHT);
+        signup_button.setId("button_logo");
         
         //Text field for first name
         TextField first_name_text= new TextField();
@@ -110,12 +109,10 @@ public class Signup extends Application {
         //Label for city
         Label city_label = new Label("By");
         
-//        //ComboBox for birthday
-//        ComboBox date_combo = new ComboBox();
-//        ComboBox month_combo = new ComboBox();
-//        ComboBox year_combo = new ComboBox();
-        //Birthday calendar
+        //DatePicker for birthday
         DatePicker birthday_picker = new DatePicker();
+        birthday_picker.setPromptText("dd/mm/åååå");
+        birthday_picker.setStyle("-fx-pref-width: 200;-fx-font-size:20;");
         
         //Putting birthday label and comboBoxes in a HBox
         HBox birthday_box = new HBox();

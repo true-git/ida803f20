@@ -91,10 +91,17 @@ and open the template in the editor.
 
 .accordion .titled-pane > *.content{
     -fx-background-color: transparent ;
+    -fx-font-size: 14px;
 }
 
 .accordion .titled-pane .title {
     -fx-background-color: transparent ;
+    -fx-font-size: 18px;
+}
+
+.accordion .titled-pane .title:hover {
+    -fx-background-color: #a3e6a9 ;
+    -fx-font-size: 18px;
 }
 /*https://i.imgur.com/5tYMjig.png
 https://images.vexels.com/media/users/3/70867/raw/54267d864a244bb4242479e474249fca-abstract-bokeh-circles-on-green-background.jpg

@@ -49,7 +49,7 @@ public class PlantInfo_GUI extends Application {
         //Search field
         TextField search_field = new TextField();
         search_field.setPromptText("Søg");
-        search_field.setId("textfield_small");
+        search_field.setId("textfield");
         
         //Back icon for the add button
         Image add_image = new Image("https://i.imgur.com/32Mvm40.png");
@@ -90,7 +90,7 @@ public class PlantInfo_GUI extends Application {
         
         //Accordion control to hold the titled panes
          Accordion accordion = new Accordion();
-         accordion.setStyle("-fx-font-size: 18px; -fx-background-color: transparent;");
+         accordion.setPadding(new Insets(10, 0, 0, 0));
 
         TitledPane presentation_pane = new TitledPane("Præsentation af planten" , new Label("Info"));
         TitledPane harvest_pane = new TitledPane("Sådan dyrkes de"  , new Label("Info"));

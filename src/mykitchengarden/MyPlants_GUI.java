@@ -30,7 +30,7 @@ import mykitchengarden.MyKitchenGarden_GUI;
 
 /**
  *
- * @author Louis
+ * @author Team PlantLet
  */
 public class MyPlants_GUI extends Application {
     

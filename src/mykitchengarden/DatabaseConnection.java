@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author Kasper
+ * @author Team PlantLet
  * 
  * 4. Process the result set
          while (myRs.next()) {

@@ -25,7 +25,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Louis
+ * @author Team PlantLet
  */
 public class MyPlantsList_GUI extends Application {
      

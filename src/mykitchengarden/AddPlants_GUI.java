@@ -38,7 +38,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author lilyhuynh
+ * @author Team PlantLet
  */
 public class AddPlants_GUI extends Application {
        private Button back_button, button_alert_OK, ok_button;

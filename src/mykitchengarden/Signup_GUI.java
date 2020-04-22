@@ -28,7 +28,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author bruger
+ * @author Team PlantLet
  */
 public class Signup_GUI extends Application {
     

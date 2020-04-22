@@ -25,7 +25,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author bruger
+ * @author Team PlantLet
  */
 public class PlantInfo_GUI extends Application {
     @Override

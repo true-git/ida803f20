@@ -10,7 +10,7 @@ import javafx.scene.image.Image;
 
 /**
  *
- * @author Louis
+ * @author Team PlantLet
  */
 public class Plant {
     Image image;

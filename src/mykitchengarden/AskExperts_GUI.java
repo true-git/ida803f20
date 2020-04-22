@@ -38,7 +38,7 @@ import javafx.scene.control.TextArea;
 
 /**
  *
- * @author 
+ * @author Team PlantLet
  */
 public class AskExperts_GUI extends Application {
        private Button back_button, button_alert_OK, ok_button;

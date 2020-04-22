@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author bruger
+ * @author Team PlantLet
  */
 public class Login_GUI extends Application {
     

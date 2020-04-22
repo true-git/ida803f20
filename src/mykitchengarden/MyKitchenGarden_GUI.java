@@ -23,7 +23,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 /**
  *
- * @author Kasper
+ * @author Team PlantLet
  * This is purely a test text to test a pull. Please remember to delete me again
  */
 public class MyKitchenGarden_GUI extends Application {

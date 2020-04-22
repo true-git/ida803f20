@@ -11,9 +11,11 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
@@ -47,9 +49,7 @@ public class PlantInfo_GUI extends Application {
         //Search field
         TextField search_field = new TextField();
         search_field.setPromptText("Søg");
-        search_field.setPrefWidth(250);
-        search_field.setMaxWidth(250);
-        search_field.setStyle("-fx-font-size: 16px;");
+        search_field.setId("textfield_small");
         
         //Back icon for the add button
         Image add_image = new Image("https://i.imgur.com/32Mvm40.png");
@@ -88,54 +88,25 @@ public class PlantInfo_GUI extends Application {
         plant_view.setFitHeight(200); 
         plant_view.setFitWidth(150);
         
-        
-        //Title pane for presentation of the plant
-        Label presentation_label = new Label("Info");
-        TitledPane presentation_pane = new TitledPane("Præsentation af planten",presentation_label);
-        presentation_pane.setStyle("-fx-font-size: 16px;");
-        presentation_pane.setExpanded(false);
-        
-        
-        //Title pane for harvesting the plant
-        Label harvest_label = new Label("Info");
-        TitledPane harvest_pane = new TitledPane("Sådan dyrkes de",harvest_label);
-        harvest_pane.setStyle("-fx-font-size: 16px;");
-        harvest_pane.setExpanded(false);
-        
-        //Title pane for how much sun the plant needs
-        Label light_label = new Label("Info");
-        TitledPane light_pane = new TitledPane("Lys",light_label);
-        light_pane.setStyle("-fx-font-size: 16px;");
-        light_pane.setExpanded(false);
-        
-        //Title pane for soil
-        Label soil_label = new Label("Info");
-        TitledPane soil_pane = new TitledPane("Jord",soil_label);
-        soil_pane.setStyle("-fx-font-size: 16px;");
-        soil_pane.setExpanded(false);
-        
-        //Title pane for water
-        Label water_label = new Label("Info");
-        TitledPane water_pane = new TitledPane("Vand",water_label);
-        water_pane.setStyle("-fx-font-size: 16px;");
-        water_pane.setExpanded(false);
-        
-        //Title pane for temperature and moist
-        Label TM_label = new Label("Info");
-        TitledPane TM_pane = new TitledPane("Temperatur og fugtighed",TM_label);
-        TM_pane.setStyle("-fx-font-size: 16px;");
-        TM_pane.setExpanded(false);
-        
-        //Title pane for temperture and moist
-        Label fertilizer_label = new Label("Info");
-        TitledPane fertilizer_pane = new TitledPane("Gødnig",fertilizer_label);
-        fertilizer_pane.setStyle("-fx-font-size: 16px;");
-        fertilizer_pane.setExpanded(false);
-        
-        //Putting the TitledPanes in the VBox
-        VBox pane_box = new VBox();
-        pane_box.setAlignment(Pos.CENTER);
-        pane_box.getChildren().addAll(presentation_pane,harvest_pane,light_pane,soil_pane,water_pane,TM_pane,fertilizer_pane);
+        //Accordion control to hold the titled panes
+         Accordion accordion = new Accordion();
+         accordion.setStyle("-fx-font-size: 18px; -fx-background-color: transparent;");
+
+        TitledPane presentation_pane = new TitledPane("Præsentation af planten" , new Label("Info"));
+        TitledPane harvest_pane = new TitledPane("Sådan dyrkes de"  , new Label("Info"));
+        TitledPane light_pane = new TitledPane("Lys", new Label("Info"));
+        TitledPane soil_pane = new TitledPane("Jord"  , new Label("Info"));
+        TitledPane water_pane = new TitledPane("Vand", new Label("Info"));
+        TitledPane TM_pane = new TitledPane("Temperatur og fugtighed"  , new Label("Info"));
+        TitledPane fertilizer_pane = new TitledPane("Gødning", new Label("Info"));
+
+        accordion.getPanes().add(presentation_pane);
+        accordion.getPanes().add(harvest_pane);
+        accordion.getPanes().add(light_pane);
+        accordion.getPanes().add(soil_pane);
+        accordion.getPanes().add(water_pane);
+        accordion.getPanes().add(TM_pane);
+        accordion.getPanes().add(fertilizer_pane);
         
         //Putting icon buttons and search field in a HBox
         HBox top_box = new HBox();
@@ -155,12 +126,11 @@ public class PlantInfo_GUI extends Application {
         infoview_box.setAlignment(Pos.CENTER);
         infoview_box.getChildren().addAll(top_box,listimage_box);
         
-        
         //The BorderPane is created called layout
         BorderPane layout = new BorderPane();
         layout.setPadding(new Insets(30, 30, 30, 30));
         layout.setTop(infoview_box);
-        layout.setCenter(pane_box);
+        layout.setCenter(accordion);
 
         //Scene is created and put inside the primaryStage
         Scene plantinfo_scene = new Scene(layout, 357, 667);

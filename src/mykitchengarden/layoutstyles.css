@@ -89,6 +89,13 @@ and open the template in the editor.
     -fx-font-family: "Calibri";
 }
 
+.accordion .titled-pane > *.content{
+    -fx-background-color: transparent ;
+}
+
+.accordion .titled-pane .title {
+    -fx-background-color: transparent ;
+}
 /*https://i.imgur.com/5tYMjig.png
 https://images.vexels.com/media/users/3/70867/raw/54267d864a244bb4242479e474249fca-abstract-bokeh-circles-on-green-background.jpg
 https://img.freepik.com/free-photo/abstract-blur-green-color-background_7182-1948.jpg?size=626&ext=jpg

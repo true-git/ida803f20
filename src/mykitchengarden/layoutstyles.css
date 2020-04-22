@@ -5,11 +5,103 @@ and open the template in the editor.
 */
 /* 
     Created on : Apr 14, 2020, 10:53:50 AM
-    Author     : Louis
+    Author     : Team PlantLet
 */
 #menu_button {
-    -fx-background-color: #CCFF99;
+    -fx-font-size: 18px;
+    -fx-pref-width: 180px;
+    -fx-padding: 10px;
+
+    -fx-background-color:#a3e6a9;
+    -fx-background-radius: 5em;
 }
-#button_login {
-   -fx-background-color: #CCFF99; 
+
+#menu_button:hover {
+    -fx-font-size: 18px;
+    -fx-pref-width: 180px;
+    -fx-padding: 10px;
+    -fx-font-family: "Berlin Sans";
+    -fx-background-color:#65bf6d;
+    -fx-background-radius: 5em;
+}
+
+#menu_button_small {
+    -fx-font-size: 14px;
+    -fx-pref-width: 120px;
+    -fx-padding: 10px;
+
+    -fx-background-color:#a3e6a9;
+    -fx-background-radius: 5em;
+}
+
+#menu_button_small:hover {
+    -fx-font-size: 14px;
+    -fx-pref-width: 120px;
+    -fx-padding: 10px;
+    -fx-font-family: "Berlin Sans";
+    -fx-background-color:#65bf6d;
+    -fx-background-radius: 5em;
+}
+
+#combox_menu{
+    -fx-font-size:18px;
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport  { -fx-background-color: transparent; }
+.scroll-pane { -fx-background-color: transparent;}
+
+#buttons {
+   -fx-background-color: transparent;
+   -fx-font-size:18px;
+   
+}
+
+#buttons:hover {
+   -fx-background-color: rgba(128,128,128,0.2);
+   
+   
+}
+
+#textfield {
+    -fx-pref-width: 270;
+    -fx-font-size:20;
+    
+}
+
+#textfield_small {
+    -fx-pref-width: 270;
+    -fx-font-size:18;
+    
+}
+
+#radio_buttons {
+    -fx-font-size:15;
+}
+
+#titles {
+    -fx-font-size:25;
+    -fx-font-family: Calibri, sans-serif;
+}
+
+#descriptions {
+    -fx-font-size:18;
+    -fx-font-family: "Calibri";
+}
+
+/*https://i.imgur.com/5tYMjig.png
+https://images.vexels.com/media/users/3/70867/raw/54267d864a244bb4242479e474249fca-abstract-bokeh-circles-on-green-background.jpg
+https://img.freepik.com/free-photo/abstract-blur-green-color-background_7182-1948.jpg?size=626&ext=jpg
+https://image.freepik.com/foto-gratis/fondo-textura-hoja-verde_63047-932.jpg
+https://image.freepik.com/foto-gratis/fondo-hoja-te-verde-plantaciones-te_1150-14752.jpg
+https://i.imgur.com/rpDSU8n.jpg
+https://i.imgur.com/oIEnFoi.jpg
+
+*/
+.root {
+    -fx-background-image: url("https://i.imgur.com/pWiXCWo.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-attachment: fixed;
+     -fx-background-position: bottom;
+     -fx-background-color: LightCyan;
 }

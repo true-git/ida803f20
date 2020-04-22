@@ -9,14 +9,11 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollBar;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
@@ -30,22 +27,22 @@ import javafx.stage.Stage;
  *
  * @author bruger
  */
-public class PlantInfo extends Application {
+public class PlantInfo_GUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         
         //Back icon for the back button
-        Image back_image = new Image("https://i.imgur.com/RakGKSy.png");
+        Image back_image = new Image("https://img.icons8.com/ios/40/000000/circled-left-2.png");
         ImageView back_view = new ImageView();
         back_view.setImage(back_image);
         
         //Setting the fit height and width of the login image
-        back_view.setFitHeight(30); 
-        back_view.setFitWidth(30);
+        back_view.setFitHeight(40); 
+        back_view.setFitWidth(40);
         
         //Button to go back
         Button back_button = new Button("",back_view);
-        back_button.setId("button_logo");
+        back_button.setId("buttons");
         
         //Search field
         TextField search_field = new TextField();
@@ -65,7 +62,7 @@ public class PlantInfo extends Application {
         
         //Button to go back
         Button add_button = new Button("",add_view);
-        add_button.setId("button_logo");
+        add_button.setId("buttons");
         
         //ListView for plant information
         ListView<String> info_list = new ListView<String>();
@@ -171,11 +168,11 @@ public class PlantInfo extends Application {
         primaryStage.setTitle("PlantLet");
         primaryStage.setScene(plantinfo_scene);
         primaryStage.show();
+        primaryStage.setResizable(false);
         
     }
-    
-    public static void main(String[] args) {
-        launch(args);
+        public static void main(String[] args) {
+        launch(args);        
     }
     
 }

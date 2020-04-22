@@ -5,6 +5,8 @@
  */
 package mykitchengarden;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -22,7 +24,11 @@ import javafx.stage.Stage;
  *
  * @author bruger
  */
-public class Login extends Application {
+public class Login_GUI extends Application {
+    
+    private Button guest_button;
+    private Button signup_button;
+    private Button login_button;
 
     @Override
     public void start (Stage primaryStage) throws Exception {
@@ -37,35 +43,38 @@ public class Login extends Application {
         logo_view.setFitWidth(205);
         
         //Enter icon for the login button
-        Image enter_image = new Image("https://i.imgur.com/NgAYbPw.png");
+        Image enter_image = new Image("https://img.icons8.com/ios/60/ok.png");
         ImageView enter_view = new ImageView();
         enter_view.setImage(enter_image);
         
         //Setting the fit height and width of the login image
-        enter_view.setFitHeight(20); 
-        enter_view.setFitWidth(20);
+        enter_view.setFitHeight(40); 
+        enter_view.setFitWidth(40);
         
         //Button to log in
         Button login_button = new Button("Log på",enter_view);
-        login_button.setId("button_logo");
+        login_button.setId("buttons");
         
         //Button to sign up
-        Button signup_button = new Button("Tilmeld dig"); 
+        Button signup_button = new Button("Tilmeld"); 
+        signup_button.setId("menu_button_small");
         
         //Button to access the app as a guest
         Button guest_button = new Button("Gæst");
+        guest_button.setId("menu_button_small");
+        
         
         //Text field for email
         TextField email_text= new TextField();
         email_text.setPromptText("E-mail");
-        email_text.setPrefWidth(250);
-        email_text.setMaxWidth(250);
+        email_text.setId("textfield");
+        email_text.setFocusTraversable(false);
         
         //Password field for password
         PasswordField password_text = new PasswordField();
         password_text.setPromptText("Kodeord");
-        password_text.setPrefWidth(250);
-        password_text.setMaxWidth(250);
+        password_text.setId("textfield");
+        password_text.setFocusTraversable(false);
         
         //Putting text fields in a vbox
         VBox login_text_box = new VBox();
@@ -97,10 +106,36 @@ public class Login extends Application {
         primaryStage.setTitle("PlantLet");
         primaryStage.setScene(login_scene);
         primaryStage.show();
+        primaryStage.setResizable(false);
+        
+        //--------------------- Here is button events ---------------------
+        
+        //Button to change to MyKitchenGarden_GUI scene 
+        MyKitchenGarden_GUI instance_MyKitchenGarden_GUI = new MyKitchenGarden_GUI ();
+        guest_button.setOnAction(e -> {
+            try {
+                instance_MyKitchenGarden_GUI.start(primaryStage);
+            } catch (Exception ex) {
+                Logger.getLogger(Login_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+       
+        //Button to change to Signup_GUI scene 
+        Signup_GUI instance_Signup_GUI = new Signup_GUI ();
+        signup_button.setOnAction(e -> {
+            try {
+                instance_Signup_GUI.start(primaryStage);
+            } catch (Exception ex) {
+                Logger.getLogger(Login_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
     }
-
+        /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        launch(args);
+        launch(args);        
     }
     
+
 }

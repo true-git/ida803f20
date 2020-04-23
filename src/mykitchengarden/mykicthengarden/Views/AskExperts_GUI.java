@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mykitchengarden;
+package mykitchengarden.mykicthengarden.Views;
 
  
 
+import mykitchengarden.mykicthengarden.Views.AddPlants_GUI;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -131,7 +132,7 @@ public class AskExperts_GUI extends Application {
         layout.setCenter(vbox_add);
 
         //Button to change to MyPlants_GUI scene 
-        MyKitchenGarden_GUI instance_MyKitchenGarden_GUI = new MyKitchenGarden_GUI();
+        MainMenu instance_MyKitchenGarden_GUI = new MainMenu();
         back_button_askexpert.setOnAction(e -> {
             try {
                 instance_MyKitchenGarden_GUI.start(primaryStage);

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mykitchengarden;
+package mykitchengarden.mykicthengarden.Views;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -26,7 +26,7 @@ import javafx.stage.Stage;
  * @author Team PlantLet
  * This is purely a test text to test a pull. Please remember to delete me again
  */
-public class MyKitchenGarden_GUI extends Application {
+public class MainMenu extends Application {
     
      private Button button_my_plants;
      private Button button_plant_library;
@@ -156,15 +156,6 @@ public class MyKitchenGarden_GUI extends Application {
         
         //--------------------- Here is button events ---------------------
         
-        //Button to change to MyPlants_GUI scene 
-        MyPlants_GUI instance_MyPlants_GUI = new MyPlants_GUI ();
-        button_my_plants.setOnAction(e -> {
-            try {
-                instance_MyPlants_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(MyPlants_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
         
         //Button to change to PlantLibrary_GUI scene 
         PlantLibrary_GUI instance_PlantLibrary_GUI = new PlantLibrary_GUI ();

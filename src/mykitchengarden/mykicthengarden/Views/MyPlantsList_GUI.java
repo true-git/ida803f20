@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mykitchengarden;
+package mykitchengarden.mykicthengarden.Views;
 
+import mykitchengarden.mykicthengarden.Views.MainMenu;
+import mykitchengarden.mykicthengarden.Views.AddPlants_GUI;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -97,7 +99,7 @@ public class MyPlantsList_GUI extends Application {
         //--------------------- Here is button events ---------------------
         
         //Button to change to MyKitchenGarden_GUI scene 
-        MyKitchenGarden_GUI instance_MyKitchenGarden_GUI = new MyKitchenGarden_GUI();
+        MainMenu instance_MyKitchenGarden_GUI = new MainMenu();
         back_button.setOnAction(e -> {
             try {
                 instance_MyKitchenGarden_GUI.start(primaryStage);

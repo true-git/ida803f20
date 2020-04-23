@@ -6,7 +6,7 @@ The model doesnt know the VIEW exists.
  */
 package mykitchengarden;
 
-import mykitchengarden.mykicthengarden.Views.DatabaseConnection;
+import mykicthengarden.Views.DatabaseConnection;
 
 /**
  *

@@ -3,7 +3,7 @@
  */
 package mykitchengarden;
 
-import mykitchengarden.mykicthengarden.Views.Login_GUI;
+import mykicthengarden.Views.Login_GUI;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

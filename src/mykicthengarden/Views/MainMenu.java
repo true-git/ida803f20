@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mykitchengarden.mykicthengarden.Views;
+package mykicthengarden.Views;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;

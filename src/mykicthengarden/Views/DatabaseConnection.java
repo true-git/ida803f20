@@ -1,4 +1,4 @@
-package mykitchengarden.mykicthengarden.Views;
+package mykicthengarden.Views;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author jacobchristensen
+ * @author jacobchristensen - dette er en test
  */
 public class MyKitchenGarden {
     

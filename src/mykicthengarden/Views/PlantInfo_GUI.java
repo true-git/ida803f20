@@ -5,6 +5,8 @@
  */
 package mykicthengarden.Views;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,7 +17,6 @@ import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
@@ -30,6 +31,9 @@ import javafx.stage.Stage;
  * @author Team PlantLet
  */
 public class PlantInfo_GUI extends Application {
+    
+    private Button back_button;
+    
     @Override
     public void start(Stage primaryStage) throws Exception {
         
@@ -140,7 +144,23 @@ public class PlantInfo_GUI extends Application {
         primaryStage.show();
         primaryStage.setResizable(false);
         
+        
+           //--------------------- Here is button events ---------------------
+        
+        
+        //Back button to change to PlantLibrary_GUI scene
+        PlantLibrary_GUI instance_PlantLibrary_GUI = new PlantLibrary_GUI ();
+        back_button.setOnAction(e -> {
+            try {
+                instance_PlantLibrary_GUI.start(primaryStage);
+            } catch (Exception ex) {
+                Logger.getLogger(PlantInfo_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        
     }
+
+        
         public static void main(String[] args) {
         launch(args);        
     }

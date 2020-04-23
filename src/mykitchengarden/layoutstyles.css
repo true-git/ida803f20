@@ -90,19 +90,27 @@ and open the template in the editor.
 }
 
 .accordion .titled-pane > *.content{
-    -fx-background-color: transparent ;
+    -fx-background-color: #E0FFFF ;
+    -fx-border-color: #006400 ;
     -fx-font-size: 14px;
 }
 
 .accordion .titled-pane .title {
-    -fx-background-color: transparent ;
+    -fx-background-color: #a3e6a9 ;
+    -fx-border-color: #006400 ;
     -fx-font-size: 18px;
 }
 
 .accordion .titled-pane .title:hover {
-    -fx-background-color: #a3e6a9 ;
+    -fx-background-color: #65bf6d ;
     -fx-font-size: 18px;
 }
+
+.titled-pane > .title > .arrow-button .arrow
+{
+    -fx-background-color: #006400 ;
+}
+
 /*https://i.imgur.com/5tYMjig.png
 https://images.vexels.com/media/users/3/70867/raw/54267d864a244bb4242479e474249fca-abstract-bokeh-circles-on-green-background.jpg
 https://img.freepik.com/free-photo/abstract-blur-green-color-background_7182-1948.jpg?size=626&ext=jpg

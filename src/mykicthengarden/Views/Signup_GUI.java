@@ -131,7 +131,6 @@ public class Signup_GUI extends BorderPane {
         
         
         //Putting text fields first name and last name in a HBox
-        
         HBox icon_label_box = new HBox(20);
         icon_label_box.getChildren().addAll(user_view, label_title);
         icon_label_box.setAlignment(Pos.CENTER);

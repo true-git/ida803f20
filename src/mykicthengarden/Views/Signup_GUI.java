@@ -5,15 +5,9 @@
  */
 package mykicthengarden.Views;
 
-import mykicthengarden.Views.Login_GUI;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -25,19 +19,25 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 /**
  *
  * @author Team PlantLet
  */
-public class Signup_GUI extends Application {
+public class Signup_GUI extends BorderPane {
     
     private Button back_button;
     private Button signup_button;
+
+    public Button getBack_button() {
+        return back_button;
+    }
+
+    public Button getSignup_button() {
+        return signup_button;
+    }
     
-    @Override
-    public void start (Stage primaryStage) throws Exception {        
+    public Signup_GUI() {        
         //Creating user logo
         Image user_image = new Image("https://i.imgur.com/6XzpWst.png");
         ImageView user_view = new ImageView();
@@ -61,7 +61,7 @@ public class Signup_GUI extends Application {
         back_view.setFitWidth(40);
         
         //Button to go back
-        Button back_button = new Button("",back_view);
+        back_button = new Button("",back_view);
         back_button.setAlignment(Pos.TOP_LEFT);
         back_button.setId("buttons");
         
@@ -75,7 +75,7 @@ public class Signup_GUI extends Application {
         enter_view.setFitWidth(40);
         
         //Button to sign up
-        Button signup_button = new Button("Tilmeld");
+        signup_button = new Button("Tilmeld");
         signup_button.setId("menu_button_small");
         
         //Text field for first name
@@ -163,30 +163,21 @@ public class Signup_GUI extends Application {
         
         
         //The BorderPane is created called layout
-        BorderPane layout = new BorderPane();
-        layout.setPadding(new Insets(30, 30, 30, 30));
-        layout.setTop(back_button);
-        layout.setCenter(info_box);
-        
-        //Scene is created and put inside the primaryStage
-        Scene signup_scene = new Scene(layout, 357, 667);
-        signup_scene.getStylesheets().add("mykitchengarden/layoutstyles.css");
-        primaryStage.setTitle("PlantLet");
-        primaryStage.setScene(signup_scene);
-        primaryStage.show();
-        primaryStage.setResizable(false);
+        setPadding(new Insets(30, 30, 30, 30));
+        setTop(back_button);
+        setCenter(info_box);
         
          //--------------------- Here is button events ---------------------
         
         //Button to change to Login_GUI scene 
-        Login_GUI instance_Login_GUI = new Login_GUI ();
-        back_button.setOnAction(e -> {
-            try {
-                instance_Login_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(Signup_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
+//        Login_GUI instance_Login_GUI = new Login_GUI ();
+//        back_button.setOnAction(e -> {
+//            try {
+//                //instance_Login_GUI.start(primaryStage);
+//            } catch (Exception ex) {
+//                Logger.getLogger(Signup_GUI.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        });
     }
     
 }

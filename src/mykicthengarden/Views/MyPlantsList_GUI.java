@@ -5,14 +5,8 @@
  */
 package mykicthengarden.Views;
 
-import mykicthengarden.Views.MainMenu;
-import mykicthengarden.Views.AddPlants_GUI;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -23,30 +17,47 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 /**
  *
  * @author Team PlantLet
  */
-public class MyPlantsList_GUI extends Application {
+public class MyPlantsList_GUI extends BorderPane {
+    
+    private Button back_button;
+    private Button squares_button;
+    private Button plus_button;
+
+    public Button getBack_button() {
+        return back_button;
+    }
+
+    public Button getSquares_button() {
+        return squares_button;
+    }
+
+    public Button getPlus_button() {
+        return plus_button;
+    }
+    
+    
      
-    public void start(Stage primaryStage) throws Exception {
+    public MyPlantsList_GUI() {
         
         //Back button with image
-        Button back_button = new Button();
+        back_button = new Button();
         Image back_icon = new Image ("https://img.icons8.com/ios/40/000000/circled-left-2.png", 40, 40, false, true);
         back_button.setGraphic(new ImageView(back_icon));
         back_button.setId("buttons");
         
         //Squares button to change listview menu
-        Button squares_button = new Button();
+        squares_button = new Button();
         Image squares_icon = new Image ("https://img.icons8.com/ios/40/000000/four-squares.png", 40, 40, false, true);
         squares_button.setGraphic(new ImageView(squares_icon));
         squares_button.setId("buttons");
         
         //Plus button to add plants
-        Button plus_button = new Button("Tilføj plante");
+        plus_button = new Button("Tilføj plante");
         plus_button.setId("menu_button_small");
         
         //Icon label 
@@ -61,12 +72,9 @@ public class MyPlantsList_GUI extends Application {
         Label description_label = new Label("Klik og se mere");
         description_label.setFont(new Font("Calibri", 18));
         
-        
         //List
         ListView listview = new ListView();
         listview.setMaxSize(270,500);
-        
-        
         
         //Making a HBox containing the icon and label 
         HBox hbox_icon_and_label = new HBox(20);
@@ -91,55 +99,13 @@ public class MyPlantsList_GUI extends Application {
         hbox_top.setPadding(new Insets (20,0,0,20));
         
         //Stackpane for plus button
-          StackPane stackpane_plus_button = new StackPane(plus_button);
+        StackPane stackpane_plus_button = new StackPane(plus_button);
         stackpane_plus_button.setAlignment(plus_button, Pos.BOTTOM_CENTER);
         stackpane_plus_button.setPadding(new Insets(20, 0, 30, 0));
         
-        
-        //--------------------- Here is button events ---------------------
-        
-        //Button to change to MyKitchenGarden_GUI scene 
-        MainMenu instance_MyKitchenGarden_GUI = new MainMenu();
-        back_button.setOnAction(e -> {
-            try {
-                instance_MyKitchenGarden_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(MyPlants_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-        
-        //Button to change to MyPlants_GUI scene 
-        MyPlants_GUI instance_MyPlants_GUI = new MyPlants_GUI();
-        squares_button.setOnAction(e -> {
-            try {
-                instance_MyPlants_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(MyPlantsList_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-        
-        //Button to change to AddPlants_GUI scene 
-        AddPlants_GUI instance_AddPlants_GUI = new AddPlants_GUI();
-        plus_button.setOnAction(e -> {
-            try {
-                instance_AddPlants_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(MyPlantsList_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-        
         //The BorderPane is created called layout
-        BorderPane layout = new BorderPane();
-        layout.setTop(hbox_top);
-        layout.setCenter(vbox_center_content);
-        layout.setBottom(stackpane_plus_button);
-        
-        //scene is created and put inside the primaryStage
-        Scene my_plants_scene = new Scene(layout, 357, 667);
-        my_plants_scene.getStylesheets().add("mykitchengarden/layoutstyles.css");
-        primaryStage.setTitle("PlantLet");
-        primaryStage.setScene(my_plants_scene);
-        primaryStage.show();
-        primaryStage.setResizable(false);
+        setTop(hbox_top);
+        setCenter(vbox_center_content);
+        setBottom(stackpane_plus_button);
     }
 }

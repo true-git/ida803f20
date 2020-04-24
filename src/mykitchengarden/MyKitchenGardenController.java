@@ -6,7 +6,7 @@ package mykitchengarden;
 
 /**
  *
- * @author jacobchristensen
+ * @author Team PlantLet
  */
 public class MyKitchenGardenController {
     

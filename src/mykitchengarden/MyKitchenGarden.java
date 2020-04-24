@@ -6,29 +6,28 @@
 package mykitchengarden;
 
 import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
 
 /**
  *
- * @author jacobchristensen
+ * @author Team PlantLet
  */
-public class MyKitchenGarden {
+public class MyKitchenGarden extends Application {
     
-    
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        MyKitchenGardenModel myKitchenGardenModel = new MyKitchenGardenModel();
+        MyKitchenGardenView myKitchenGardenView = new MyKitchenGardenView(primaryStage);
+        new MyKitchenGardenController(myKitchenGardenModel, myKitchenGardenView);
+    }
     
     public static void main(String[] args) {
-        
-        MyKitchenGardenView myKitchenGardenView = new MyKitchenGardenView();
-        
-        MyKitchenGardenModel myKitchenGardenModel = new MyKitchenGardenModel();
-        
-        MyKitchenGardenController myKitchenGardenController = new MyKitchenGardenController(myKitchenGardenModel, myKitchenGardenView);
-        
-        
-        
-        
+        launch(args);
+        // TODO code application logic here
     }
     
 }

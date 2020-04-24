@@ -4,12 +4,8 @@
  * and open the template in the editor.
  */
 package mykicthengarden.Views;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
@@ -20,13 +16,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 /**
  *
  * @author Team PlantLet
  * This is purely a test text to test a pull. Please remember to delete me again
  */
-public class MainMenu extends Application {
+public class MainMenu extends BorderPane {
     
      private Button button_my_plants;
      private Button button_plant_library;
@@ -34,12 +29,28 @@ public class MainMenu extends Application {
      private Button button_weather;
      private Button button_ask_expert;
      private MenuButton combox_menu;
-     private Scene menu_scene;
-     private Stage primaryStage;
 
+    public Button getButton_my_plants() {
+        return button_my_plants;
+    }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public Button getButton_plant_library() {
+        return button_plant_library;
+    }
+
+    public Button getButton_to_do_calendar() {
+        return button_to_do_calendar;
+    }
+
+    public Button getButton_weather() {
+        return button_weather;
+    }
+
+    public Button getButton_ask_expert() {
+        return button_ask_expert;
+    }
+
+    public MainMenu() {
         
         //Menu for setting / logout
         MenuButton combox_menu = new MenuButton();
@@ -85,28 +96,28 @@ public class MainMenu extends Application {
         ImageView imageview_icon5 = new ImageView(image_icon5);        
 
         //Button to change page to my plants
-        Button button_my_plants = new Button();
+        button_my_plants = new Button();
         button_my_plants.setText("Mine planter");
         button_my_plants.setId("menu_button");
 
         //Button to change page to plant library
-        Button button_plant_library= new Button();
+        button_plant_library= new Button();
         button_plant_library.setText("Plante Bibliotek");
         button_plant_library.setId("menu_button");
         
         //Button to change page to to-do calendar
-        Button button_to_do_calendar = new Button();
+        button_to_do_calendar = new Button();
         button_to_do_calendar.setText("To-Do Kalender");
         button_to_do_calendar.setId("menu_button");
         // button_to_do_calendar.setDisable(true);
         
         //Button to change page to weather
-        Button button_weather = new Button();
+        button_weather = new Button();
         button_weather.setText("Vejret");
         button_weather.setId("menu_button");
         
         //Button to change page to ask expert
-        Button button_ask_expert = new Button();
+        button_ask_expert = new Button();
         button_ask_expert.setText("Spørg Eksperterne");        
         button_ask_expert.setId("menu_button");
         
@@ -142,52 +153,17 @@ public class MainMenu extends Application {
         vbox_center_content.setAlignment(Pos.CENTER);        
         
         //The BorderPane is created called layout
-        BorderPane layout = new BorderPane();
-        layout.setTop(stackpane_menu);
-        layout.setCenter(vbox_center_content);
-        
-        //scene is created and put inside the primaryStage
-        Scene menu_scene = new Scene(layout, 357, 667);
-        menu_scene.getStylesheets().add("mykitchengarden/layoutstyles.css");        
-        primaryStage.setTitle("PlantLet");
-        primaryStage.setScene(menu_scene);
-        primaryStage.show();
-        primaryStage.setResizable(false);
-        
-        //--------------------- Here is button events ---------------------
+        setTop(stackpane_menu);
+        setCenter(vbox_center_content);
         
         
-        //Button to change to PlantLibrary_GUI scene 
-        PlantLibrary_GUI instance_PlantLibrary_GUI = new PlantLibrary_GUI ();
-        button_plant_library.setOnAction(e -> {
-            try {
-                instance_PlantLibrary_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(MyPlants_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
+//        //Database related
+//        DatabaseConnection dbc = new DatabaseConnection();
+//        dbc.executeQuery("Select * from plants");
+//        while(dbc.myRs.next()) {
+//            System.out.println(dbc.myRs.getString("common_name") + ", " + dbc.myRs.getString("latin_name") +
+//                    ", " + dbc.myRs.getString("climate_zone"));
+//        }
         
-        //Button to change to AskExperts_GUI scene 
-        AskExperts_GUI instance_AskExperts_GUI = new AskExperts_GUI ();
-        button_ask_expert.setOnAction(e -> {
-            try {
-                instance_AskExperts_GUI .start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(MyPlants_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-        
-        
-        //Database related
-        DatabaseConnection dbc = new DatabaseConnection();
-        dbc.executeQuery("Select * from plants");
-        while(dbc.myRs.next()) {
-            System.out.println(dbc.myRs.getString("common_name") + ", " + dbc.myRs.getString("latin_name") +
-                    ", " + dbc.myRs.getString("climate_zone"));
-        }
-        
-    }
-    public void changetomenu(){
-        primaryStage.setScene(menu_scene);
     }
 }

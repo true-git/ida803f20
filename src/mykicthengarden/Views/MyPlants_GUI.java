@@ -5,15 +5,9 @@
  */
 package mykicthengarden.Views;
 
-import mykicthengarden.Views.MainMenu;
-import mykicthengarden.Views.AddPlants_GUI;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -25,34 +19,47 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 
 /**
  *
  * @author Team PlantLet
  */
-public class MyPlants_GUI extends Application {
+public class MyPlants_GUI extends BorderPane {
     
     Label plant_label;
-    Button back_button;
+    private Button back_button;
+    private Button list_button;
+    private Button plus_button;
+
+    public Button getBack_button() {
+        return back_button;
+    }
+
+    public Button getList_button() {
+        return list_button;
+    }
+
+    public Button getPlus_button() {
+        return plus_button;
+    }
     
-    public void start(Stage primaryStage) throws Exception {
+    public MyPlants_GUI() {
         
         //Back button with image
-        Button back_button = new Button();
+        back_button = new Button();
         Image back_icon = new Image ("https://img.icons8.com/ios/40/000000/circled-left-2.png", 40, 40, false, true);
         back_button.setGraphic(new ImageView(back_icon));
         back_button.setId("buttons");
         
         //Button to change list menu
-        Button list_button = new Button();
+        list_button = new Button();
         Image list_icon = new Image ("https://img.icons8.com/material-rounded/40/000000/list.png", 40, 40, false, true);
         list_button.setGraphic(new ImageView(list_icon));
         list_button.setId("buttons");
         
         //Plus button to add plants
-        Button plus_button = new Button("Tilføj plante");
+        plus_button = new Button("Tilføj plante");
         plus_button.setId("menu_button_small");
         
          //Icon label 
@@ -127,57 +134,14 @@ public class MyPlants_GUI extends Application {
         hbox_top.setPadding(new Insets (20,0,0,20));
         
         //Stackpane for plus button
-          StackPane stackpane_plus_button = new StackPane(plus_button);
+        StackPane stackpane_plus_button = new StackPane(plus_button);
         stackpane_plus_button.setAlignment(plus_button, Pos.BOTTOM_CENTER);
-        stackpane_plus_button.setPadding(new Insets(20, 0, 30, 0));
-        
-        
-        //--------------------- Here is button events ---------------------
-        
-        //Button to change to MyKitchenGarden_GUI scene 
-        MainMenu instance_MyKitchenGarden_GUI = new MainMenu();
-        back_button.setOnAction(e -> {
-            try {
-                instance_MyKitchenGarden_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(MyPlants_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-        
-        //Button to change to MyPlantsList_GUI_GUI scene 
-        MyPlantsList_GUI instance_MyPlants_GUI = new MyPlantsList_GUI();
-        list_button.setOnAction(e -> {
-            try {
-                instance_MyPlants_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(MyPlants_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-        
-        //Button to change to AddPlants_GUI scene 
-        AddPlants_GUI instance_AddPlants_GUI = new AddPlants_GUI();
-        plus_button.setOnAction(e -> {
-            try {
-                instance_AddPlants_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(MyPlants_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-        
+        stackpane_plus_button.setPadding(new Insets(20, 0, 30, 0));     
         
         //The BorderPane is created called layout
-        BorderPane layout = new BorderPane();
-        layout.setTop(hbox_top);
-        layout.setCenter(vbox_icon_and_description);
-        layout.setBottom(stackpane_plus_button);
-        
-        //scene is created and put inside the primaryStage
-        Scene my_plants_scene = new Scene(layout, 357, 667);
-        my_plants_scene.getStylesheets().add("mykitchengarden/layoutstyles.css");
-        primaryStage.setTitle("PlantLet");
-        primaryStage.setScene(my_plants_scene);
-        primaryStage.show();
-        primaryStage.setResizable(false);
+        setTop(hbox_top);
+        setCenter(vbox_icon_and_description);
+        setBottom(stackpane_plus_button);
     }
     
     private VBox vbox_generator(Image image, String name) {

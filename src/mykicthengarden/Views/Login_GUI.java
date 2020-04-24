@@ -5,12 +5,8 @@
  */
 package mykicthengarden.Views;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -18,20 +14,30 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 /**
  *
  * @author Team PlantLet
  */
-public class Login_GUI extends Application {
+public class Login_GUI extends BorderPane {
     
     private Button guest_button;
     private Button signup_button;
     private Button login_button;
 
-    @Override
-    public void start (Stage primaryStage) throws Exception {
+    public Button getGuest_button() {
+        return guest_button;
+    }
+
+    public Button getSignup_button() {
+        return signup_button;
+    }
+
+    public Button getLogin_button() {
+        return login_button;
+    }
+
+    public Login_GUI () {
         
         //Creating logo
         Image logo_image = new Image("https://i.imgur.com/cvhMPnE.png");
@@ -52,15 +58,15 @@ public class Login_GUI extends Application {
         enter_view.setFitWidth(40);
         
         //Button to log in
-        Button login_button = new Button("Log på",enter_view);
+        login_button = new Button("Log på",enter_view);
         login_button.setId("buttons");
         
         //Button to sign up
-        Button signup_button = new Button("Tilmeld"); 
+        signup_button = new Button("Tilmeld"); 
         signup_button.setId("menu_button_small");
         
         //Button to access the app as a guest
-        Button guest_button = new Button("Gæst");
+        guest_button = new Button("Gæst");
         guest_button.setId("menu_button_small");
         
         
@@ -95,59 +101,10 @@ public class Login_GUI extends Application {
         buttons_box.getChildren().addAll(signup_button,guest_button);
         
         //The BorderPane is created called layout
-        BorderPane layout = new BorderPane();
-        layout.setPadding(new Insets(30, 30, 100, 30));
-        layout.setCenter(login_box);
-        layout.setBottom(buttons_box);
+        setPadding(new Insets(30, 30, 100, 30));
+        setCenter(login_box);
+        setBottom(buttons_box);
         
-        //scene is created and put inside the primaryStage
-        Scene login_scene = new Scene(layout, 357, 667);
-        login_scene.getStylesheets().add("mykitchengarden/layoutstyles.css");
-        primaryStage.setTitle("PlantLet");
-        primaryStage.setScene(login_scene);
-        primaryStage.show();
-        primaryStage.setResizable(false);
-        
-        //--------------------- Here is button events ---------------------
-        
-        
-        //Login button to change to MyKitchenGarden_GUI scene
-        MainMenu instance_MyKitchenGarden_GUI_logged_In = new MainMenu();
-        login_button.setOnAction(e -> {
-            try {
-                instance_MyKitchenGarden_GUI_logged_In.start(primaryStage);
-            } catch (Exception ex) {
-                
-            }
-        });
-        
-        
-        //Button (Gæst button) to change to MyKitchenGarden_GUI scene 
-        MainMenu instance_MyKitchenGarden_GUI = new MainMenu ();
-        guest_button.setOnAction(e -> {
-            try {
-                instance_MyKitchenGarden_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(Login_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-       
-        //Button to change to Signup_GUI scene 
-        Signup_GUI instance_Signup_GUI = new Signup_GUI ();
-        signup_button.setOnAction(e -> {
-            try {
-                instance_Signup_GUI.start(primaryStage);
-            } catch (Exception ex) {
-                Logger.getLogger(Login_GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-    }
-        /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);        
-    }
-    
+    } 
 
 }

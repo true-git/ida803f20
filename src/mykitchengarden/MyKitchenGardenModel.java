@@ -10,7 +10,7 @@ import mykicthengarden.Views.DatabaseConnection;
 
 /**
  *
- * @author jacobchristensen
+ * @author Team PlantLet
  */
 public class MyKitchenGardenModel {
     
@@ -18,18 +18,18 @@ public class MyKitchenGardenModel {
     private String user;
     
     
-    //connnecting to the database
-    DatabaseConnection dbc = new DatabaseConnection();
-    
-    //login to the app
-    public void userLogin(String email, String password) {
-        
-        
-        dbc.executeQuery("select something");
-        //TODO code
-        // Make a user table in MySQL to store the users inforamtion after registrering
-        
-    }
+//    //connnecting to the database
+//    DatabaseConnection dbc = new DatabaseConnection();
+//    
+//    //login to the app
+//    public void userLogin(String email, String password) {
+//        
+//        
+//        dbc.executeQuery("select something");
+//        //TODO code
+//        // Make a user table in MySQL to store the users inforamtion after registrering
+//        
+//    }
     
   
     

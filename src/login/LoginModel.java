@@ -33,15 +33,14 @@ public class LoginModel {
 //    }
     
     public boolean userValidated(String email, String password){
-        String query = "Select email, pass from users where email = '" + email + "'";
+        String query = "Select pass from users where email = '" + email + "'";
         ResultSet myRs = dbc.executeQuery(query);
         try {
             while (myRs.next()){
-                if(myRs.getString("email").equals(email) && myRs.getString("pass").equals(password)){
+                if(myRs.getString("pass").equals(password)){
                     myRs.close();
                     return true;
                 }
-                myRs.close();
             }
         } catch (SQLException ex) {
             Logger.getLogger(LoginModel.class.getName()).log(Level.SEVERE, null, ex);

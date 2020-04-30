@@ -14,8 +14,15 @@ import mykicthengarden.Views.DatabaseConnection;
  */
 public class MyKitchenGardenModel {
     
+    private DatabaseConnection dbc;
     
-    private String user;
+    public MyKitchenGardenModel(){
+        //open db connection setup
+        dbc = new DatabaseConnection();
+    }
+    
+//    private String email;
+//    private String password; // guardedstring oracle
     
     
 //    //connnecting to the database
@@ -30,7 +37,51 @@ public class MyKitchenGardenModel {
 //        // Make a user table in MySQL to store the users inforamtion after registrering
 //        
 //    }
+
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
+//
+//    public String getPassword() {
+//        return password;
+//    }
+//
+//    public void setPassword(String password) {
+//        this.password = password;
+//    }
+//    
+//    public boolean emailEntryMatches(String email_text){
+//        return email_text.equals(email);
+//    }
     
+    public boolean createUser(String email, String password){
+        if (emailExists(email) || !passwordMatches(password)) {
+            return false;//inform email exists
+        } else {
+            //create user in db
+            return true;
+        }
+    }
+    
+    public boolean userValidated(String email, String password){
+        if (emailExists(email) && passwordMatches(password)) {
+            return true;//inform email exists
+        } else return false;
+    }
+    
+    private boolean emailExists(String email){
+        if (email.equals("")){ // replace "" with db search result
+            return true;
+        } else return false;
+    }
+    
+    private boolean passwordMatches(String password){
+        return true;
+    }
   
     
     

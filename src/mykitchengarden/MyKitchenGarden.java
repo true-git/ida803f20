@@ -5,11 +5,11 @@
  */
 package mykitchengarden;
 
+import login.*;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 
 
 /**
@@ -20,9 +20,18 @@ public class MyKitchenGarden extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception {
-        MyKitchenGardenModel myKitchenGardenModel = new MyKitchenGardenModel();
-        MyKitchenGardenView myKitchenGardenView = new MyKitchenGardenView(primaryStage);
-        new MyKitchenGardenController(myKitchenGardenModel, myKitchenGardenView);
+        LoginModel loginModel = new LoginModel();
+        LoginView loginView = new LoginView();
+        LoginController loginController = new LoginController(loginModel, loginView, primaryStage);
+        
+        primaryStage.setTitle("PlantLet");
+        primaryStage.setScene(new Scene(loginView, 357, 667));
+        primaryStage.getScene().getStylesheets().add("mykitchengarden/layoutstyles.css");
+        primaryStage.show();
+        primaryStage.setResizable(false);
+//        MyKitchenGardenModel myKitchenGardenModel = new MyKitchenGardenModel();
+//        MyKitchenGardenView myKitchenGardenView = new MyKitchenGardenView(primaryStage);
+//        new MyKitchenGardenController(myKitchenGardenModel, myKitchenGardenView);
     }
     
     public static void main(String[] args) {

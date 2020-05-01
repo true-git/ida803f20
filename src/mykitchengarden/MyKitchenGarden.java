@@ -10,6 +10,7 @@ import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import mykicthengarden.Views.DatabaseConnection;
 
 
 /**
@@ -20,6 +21,7 @@ public class MyKitchenGarden extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception {
+//        LoginModel loginModel = new LoginModel(new DatabaseConnection());
         LoginModel loginModel = new LoginModel();
         LoginView loginView = new LoginView();
         LoginController loginController = new LoginController(loginModel, loginView, primaryStage);

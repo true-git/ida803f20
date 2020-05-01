@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mykicthengarden.Views;
+package signup;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -24,7 +24,7 @@ import javafx.scene.layout.VBox;
  *
  * @author Team PlantLet
  */
-public class Signup_GUI extends BorderPane {
+public class SignupView extends BorderPane {
     
     private Button back_button;
     private Button signup_button;
@@ -37,7 +37,7 @@ public class Signup_GUI extends BorderPane {
         return signup_button;
     }
     
-    public Signup_GUI() {        
+    public SignupView() {        
         //Creating user logo
         Image user_image = new Image("https://i.imgur.com/6XzpWst.png");
         ImageView user_view = new ImageView();
@@ -79,7 +79,7 @@ public class Signup_GUI extends BorderPane {
         signup_button.setId("menu_button_small");
         
         //Text field for first name
-        TextField first_name_text= new TextField();
+        TextField first_name_text = new TextField();
         first_name_text.setPromptText("Fornavn");
         first_name_text.setId("textfield_small");
         

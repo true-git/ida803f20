@@ -6,6 +6,7 @@
 package login;
 
 import javafx.stage.Stage;
+import signup.*;
 
 /**
  *
@@ -13,14 +14,14 @@ import javafx.stage.Stage;
  */
 public class LoginController {
     
-    Stage stage;
-    LoginModel loginModel;
-    LoginView loginView;
+//    Stage stage;
+//    LoginModel loginModel;
+//    LoginView loginView;
 
     public LoginController(LoginModel loginModel, LoginView loginView, Stage stage) {
-        this.loginModel = loginModel;
-        this.loginView = loginView;
-        this.stage = stage;
+//        this.loginModel = loginModel;
+//        this.loginView = loginView;
+//        this.stage = stage;
         
         loginView.getLogin_button().setOnAction(e -> {
             if(loginModel.userValidated(loginView.getEmail_text().getText(), loginView.getPassword_text().getText())){
@@ -32,6 +33,12 @@ public class LoginController {
             }
                 });
         
+        loginView.getSignup_button().setOnAction(e -> {
+            SignupModel signupModel = new SignupModel();
+            SignupView signupView = new SignupView();
+            stage.getScene().setRoot(signupView);
+            SignupController signupController = new SignupController(signupModel, signupView, stage);
+            });
 //        stage.getScene().setRoot(loginView);
         
     }

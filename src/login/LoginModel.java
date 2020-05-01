@@ -19,7 +19,9 @@ public class LoginModel {
     
     DatabaseConnection dbc;
 
+//    public LoginModel(DatabaseConnection dbc) {
     public LoginModel() {
+//        this.dbc = dbc;
         dbc = new DatabaseConnection();
     }
     

@@ -3,6 +3,7 @@
  */
 package mykitchengarden;
 
+import signup.SignupView;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -16,7 +17,7 @@ class MyKitchenGardenView {
     
     private Stage stage;
     private Login_GUI login_GUI;
-    private Signup_GUI signup_GUI;
+    private SignupView signup_GUI;
     private MainMenu mainmenu;
 
     public MainMenu getMainmenu() {
@@ -31,7 +32,7 @@ class MyKitchenGardenView {
         this.stage = stage;
         
         login_GUI = new Login_GUI();
-        signup_GUI = new Signup_GUI();
+        signup_GUI = new SignupView();
         mainmenu = new MainMenu();
         MyPlants_GUI myPlants_GUI = new MyPlants_GUI();
         MyPlantsList_GUI myPlantsList_GUI = new MyPlantsList_GUI();

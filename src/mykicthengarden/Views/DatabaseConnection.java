@@ -33,7 +33,7 @@ public class DatabaseConnection {
         user = username;
         pass = password;
         
-        initiate();   
+        initiate();
     }
     
     public ResultSet executeQuery(String query) {

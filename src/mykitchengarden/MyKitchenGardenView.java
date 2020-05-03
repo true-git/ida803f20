@@ -3,6 +3,7 @@
  */
 package mykitchengarden;
 
+import signup.SignupView;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -14,14 +15,25 @@ import mykicthengarden.Views.*;
  */
 class MyKitchenGardenView {
     
-    Stage stage;
+    private Stage stage;
+    private Login_GUI login_GUI;
+    private SignupView signup_GUI;
+    private MainMenu mainmenu;
+
+    public MainMenu getMainmenu() {
+        return mainmenu;
+    }
+
+    public Login_GUI getLogin_GUI() {
+        return login_GUI;
+    }
 
     public MyKitchenGardenView(Stage stage) {
         this.stage = stage;
         
-        Login_GUI login_GUI = new Login_GUI();
-        Signup_GUI signup_GUI = new Signup_GUI();
-        MainMenu mainmenu = new MainMenu();
+        login_GUI = new Login_GUI();
+        signup_GUI = new SignupView();
+        mainmenu = new MainMenu();
         MyPlants_GUI myPlants_GUI = new MyPlants_GUI();
         MyPlantsList_GUI myPlantsList_GUI = new MyPlantsList_GUI();
         AddPlants_GUI addPlants_GUI = new AddPlants_GUI();
@@ -29,7 +41,7 @@ class MyKitchenGardenView {
         AskExperts_GUI askExperts_GUI = new AskExperts_GUI();
         
         //--------------------- Here is button events ---------------------
-        login_GUI.getLogin_button().setOnAction(e -> updateView(mainmenu));
+//        login_GUI.getLogin_button().setOnAction(e -> updateView(mainmenu));
         login_GUI.getGuest_button().setOnAction(e -> updateView(mainmenu));
         login_GUI.getSignup_button().setOnAction(e -> updateView(signup_GUI));
         signup_GUI.getBack_button().setOnAction(e -> updateView(login_GUI));
@@ -53,7 +65,7 @@ class MyKitchenGardenView {
         stage.setResizable(false);
     }
     
-    private void updateView(Pane pane) {
+    public void updateView(Pane pane) {
         stage.getScene().setRoot(pane);
     }
   

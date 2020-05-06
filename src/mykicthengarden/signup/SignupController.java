@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package signup;
+package mykicthengarden.signup;
 
 import javafx.stage.Stage;
-import login.LoginController;
-import login.LoginModel;
-import login.LoginView;
+import mykicthengarden.login.LoginController;
+import mykicthengarden.login.LoginModel;
+import mykicthengarden.login.LoginView;
 
 /**
  *

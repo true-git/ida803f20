@@ -5,6 +5,7 @@
  */
 package mykicthengarden.Views;
 
+import mykicthengarden.plantLibrary.PlantLibraryView;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -69,7 +70,7 @@ public class PlantInfo_GUI extends Application {
         add_button.setId("buttons");
         
         //ListView for plant information
-        ListView<String> info_list = new ListView<String>();
+        ListView<String> info_list = new ListView<>();
         ObservableList<String> items =FXCollections.observableArrayList (
             "Navn","Sort","Jord","Vand","Temperatur","Gødning","Høstning");
         info_list.setItems(items);
@@ -149,7 +150,7 @@ public class PlantInfo_GUI extends Application {
         
         
         //Back button to change to PlantLibrary_GUI scene
-        PlantLibrary_GUI instance_PlantLibrary_GUI = new PlantLibrary_GUI ();
+        PlantLibraryView instance_PlantLibrary_GUI = new PlantLibraryView ();
         back_button.setOnAction(e -> {
             try {
 //                instance_PlantLibrary_GUI.start(primaryStage);

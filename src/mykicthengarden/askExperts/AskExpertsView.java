@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mykicthengarden.Views;
+package mykicthengarden.askExperts;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -31,7 +31,7 @@ import javafx.scene.control.TextArea;
  *
  * @author Team PlantLet
  */
-public class AskExperts_GUI extends BorderPane {
+public class AskExpertsView extends BorderPane {
         private Button back_button, button_alert_OK, ok_button;
         private TextField input;
 
@@ -39,7 +39,7 @@ public class AskExperts_GUI extends BorderPane {
         return back_button;
     }
         
-    public AskExperts_GUI() {
+    public AskExpertsView() {
         //Making the Back button
         back_button = new Button();
         Image back_icon = new Image ("https://img.icons8.com/ios/40/000000/circled-left-2.png", 40, 40, false, true);

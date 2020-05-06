@@ -1,4 +1,4 @@
-package mykicthengarden.Views;
+package mykicthengarden.plantLibrary;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-public class PlantLibrary_GUI extends VBox {
+public class PlantLibraryView extends VBox {
     
     private Button back_button;
 
@@ -18,7 +18,7 @@ public class PlantLibrary_GUI extends VBox {
         return back_button;
     }
 
-    public PlantLibrary_GUI() {
+    public PlantLibraryView() {
         
          //Back button
         Image back_image = new Image("https://img.icons8.com/ios/40/000000/circled-left-2.png");

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mykicthengarden.Views;
+package mykicthengarden.mainMenu;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -21,7 +21,7 @@ import javafx.scene.layout.VBox;
  * @author Team PlantLet
  * This is purely a test text to test a pull. Please remember to delete me again
  */
-public class MainMenu extends BorderPane {
+public class MainMenuView extends BorderPane {
     
      private Button button_my_plants;
      private Button button_plant_library;
@@ -29,6 +29,9 @@ public class MainMenu extends BorderPane {
      private Button button_weather;
      private Button button_ask_expert;
      private MenuButton combox_menu;
+    private MenuItem menu_item_settings;
+    private final Image menu_icon;
+    private final MenuItem menu_item_log_out;
 
     public Button getButton_my_plants() {
         return button_my_plants;
@@ -49,8 +52,18 @@ public class MainMenu extends BorderPane {
     public Button getButton_ask_expert() {
         return button_ask_expert;
     }
+    
+    public MenuItem getMenu_item_settings() {
+        return menu_item_settings;
+    }
 
-    public MainMenu() {
+    public MenuItem getMenu_item_log_out() {
+        return menu_item_log_out;
+    }
+    
+    
+
+    public MainMenuView() {
         
         //Menu for setting / logout
         MenuButton combox_menu = new MenuButton();
@@ -58,13 +71,13 @@ public class MainMenu extends BorderPane {
         combox_menu.setId("combox_menu");
        
         //Items in menu
-        MenuItem menu_item_settings = new MenuItem("Settings");
-        MenuItem menu_item_log_out = new MenuItem("Log Out");
+        menu_item_settings = new MenuItem("Settings");
+        menu_item_log_out = new MenuItem("Log Out");
         combox_menu.getItems().addAll(menu_item_settings, menu_item_log_out);
         
         //icon in menu
-        Image image_menu_icon = new Image ("https://img.icons8.com/ios-filled/20/000000/menu.png", 20, 20, true, false);
-        ImageView imageview_menu_icon = new ImageView(image_menu_icon);
+        menu_icon = new Image ("https://img.icons8.com/ios-filled/20/000000/menu.png", 20, 20, true, false);
+        ImageView imageview_menu_icon = new ImageView(menu_icon);
         combox_menu.setGraphic (imageview_menu_icon);
              
         //Plant icon 
@@ -155,15 +168,6 @@ public class MainMenu extends BorderPane {
         //The BorderPane is created called layout
         setTop(stackpane_menu);
         setCenter(vbox_center_content);
-        
-        
-//        //Database related
-//        DatabaseConnection dbc = new DatabaseConnection();
-//        dbc.executeQuery("Select * from plants");
-//        while(dbc.myRs.next()) {
-//            System.out.println(dbc.myRs.getString("common_name") + ", " + dbc.myRs.getString("latin_name") +
-//                    ", " + dbc.myRs.getString("climate_zone"));
-//        }
         
     }
 }

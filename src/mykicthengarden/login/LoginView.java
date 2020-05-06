@@ -1,4 +1,4 @@
-package login;
+package mykicthengarden.login;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

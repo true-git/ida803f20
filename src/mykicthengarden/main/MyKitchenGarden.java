@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mykitchengarden;
+package mykicthengarden.main;
 
-import login.*;
+import mykicthengarden.login.LoginController;
+import mykicthengarden.login.LoginView;
+import mykicthengarden.login.LoginModel;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
@@ -21,7 +23,7 @@ public class MyKitchenGarden extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception {
-//        LoginModel loginModel = new LoginModel(new DatabaseConnection());
+        
         LoginModel loginModel = new LoginModel();
         LoginView loginView = new LoginView();
         LoginController loginController = new LoginController(loginModel, loginView, primaryStage);
@@ -31,9 +33,7 @@ public class MyKitchenGarden extends Application {
         primaryStage.getScene().getStylesheets().add("mykitchengarden/layoutstyles.css");
         primaryStage.show();
         primaryStage.setResizable(false);
-//        MyKitchenGardenModel myKitchenGardenModel = new MyKitchenGardenModel();
-//        MyKitchenGardenView myKitchenGardenView = new MyKitchenGardenView(primaryStage);
-//        new MyKitchenGardenController(myKitchenGardenModel, myKitchenGardenView);
+
     }
     
     public static void main(String[] args) {

@@ -3,10 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package login;
+package mykicthengarden.login;
 
+import mykicthengarden.signup.SignupModel;
+import mykicthengarden.signup.SignupView;
+import mykicthengarden.signup.SignupController;
 import javafx.stage.Stage;
-import signup.*;
+import mykicthengarden.mainMenu.MainMenuController;
+import mykicthengarden.mainMenu.MainMenuModel;
+import mykicthengarden.mainMenu.MainMenuView;
 
 /**
  *
@@ -23,6 +28,8 @@ public class LoginController {
 //        this.loginView = loginView;
 //        this.stage = stage;
         
+
+        //get the loginButton. when clicked check if the user exist in the database, and check if the password matches
         loginView.getLogin_button().setOnAction(e -> {
             if(loginModel.userValidated(loginView.getEmail_text().getText(), loginView.getPassword_text().getText())){
                 //goToMainMenuView();
@@ -33,14 +40,24 @@ public class LoginController {
             }
                 });
         
+        //get th esignup button and go the signupView when pushed.
         loginView.getSignup_button().setOnAction(e -> {
             SignupModel signupModel = new SignupModel();
             SignupView signupView = new SignupView();
             stage.getScene().setRoot(signupView);
             SignupController signupController = new SignupController(signupModel, signupView, stage);
             });
-//        stage.getScene().setRoot(loginView);
         
+        //for easy access, development purpose, use the guest button to access the mainMenu.
+        loginView.getGuest_button().setOnAction(e -> {
+            MainMenuModel mainMenuModel = new MainMenuModel();
+            MainMenuView mainMenuView = new MainMenuView();
+            stage.getScene().setRoot(mainMenuView);
+            MainMenuController mainMenuController = new MainMenuController(mainMenuModel, mainMenuView, stage);
+            
+        });
+
+    
     }
     
 }

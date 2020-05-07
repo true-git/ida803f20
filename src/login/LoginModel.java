@@ -24,7 +24,7 @@ public class LoginModel {
 //        this.dbc = dbc;
         dbc = new DatabaseConnection();
     }
-    
+
 //    public boolean createUser(String email, String password){
 //        if (emailExists(email) || !passwordMatches(password)) {
 //            return false;//inform email exists

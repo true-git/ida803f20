@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mykicthengarden.Views;
+package mykicthengarden.myPlants;
 
 import java.util.ArrayList;
 import javafx.geometry.Insets;
@@ -25,7 +25,7 @@ import javafx.scene.text.Font;
  *
  * @author Team PlantLet
  */
-public class MyPlants_GUI extends BorderPane {
+public class MyPlantsView extends BorderPane {
     
     Label plant_label;
     private Button back_button;
@@ -44,7 +44,7 @@ public class MyPlants_GUI extends BorderPane {
         return plus_button;
     }
     
-    public MyPlants_GUI() {
+    public MyPlantsView() {
         
         //Back button with image
         back_button = new Button();
@@ -76,13 +76,13 @@ public class MyPlants_GUI extends BorderPane {
         
         //Imageviews and labels for testing of placement for center content
         Image plant_image1 = new Image ("https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-260nw-1037719192.jpg", 120, 120, false, true);
-        ImageView plant_imageview1 = new ImageView(plant_image1);
+        //ImageView plant_imageview1 = new ImageView(plant_image1);
 
         Plant plant1 = new Plant("Gulerødder", plant_image1);
         Plant plant2 = new Plant("Kartofler", plant_image1);
         Plant plant3 = new Plant("Radisser", plant_image1);
         
-        ArrayList<Plant> list = new ArrayList();
+        ArrayList<Plant> list = new ArrayList<>();
         list.add(plant1);
         list.add(plant2);
         list.add(plant3);
@@ -107,7 +107,7 @@ public class MyPlants_GUI extends BorderPane {
                 column = 0;
                 row ++;
             }
-        };
+        }
 
         grid_plants .setHgap(30);
         grid_plants .setVgap(20);
@@ -135,7 +135,7 @@ public class MyPlants_GUI extends BorderPane {
         
         //Stackpane for plus button
         StackPane stackpane_plus_button = new StackPane(plus_button);
-        stackpane_plus_button.setAlignment(plus_button, Pos.BOTTOM_CENTER);
+        StackPane.setAlignment(plus_button, Pos.BOTTOM_CENTER);
         stackpane_plus_button.setPadding(new Insets(20, 0, 30, 0));     
         
         //The BorderPane is created called layout

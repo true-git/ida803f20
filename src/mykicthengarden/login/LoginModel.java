@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package login;
+package mykicthengarden.login;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -24,7 +24,7 @@ public class LoginModel {
 //        this.dbc = dbc;
         dbc = new DatabaseConnection();
     }
-
+    
 //    public boolean createUser(String email, String password){
 //        if (emailExists(email) || !passwordMatches(password)) {
 //            return false;//inform email exists

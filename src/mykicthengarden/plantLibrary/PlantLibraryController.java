@@ -1,0 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mykicthengarden.plantLibrary;
+
+import javafx.stage.Stage;
+import mykicthengarden.mainMenu.MainMenuController;
+import mykicthengarden.mainMenu.MainMenuModel;
+import mykicthengarden.mainMenu.MainMenuView;
+
+/**
+ *
+ * @author jacobchristensen
+ */
+public class PlantLibraryController {
+
+    public PlantLibraryController(PlantLibraryModel plantLibraryModel, PlantLibraryView plantLibraryView, Stage stage) {
+        
+        plantLibraryView.getBack_button().setOnAction(e -> {
+            
+            MainMenuModel mainMenuModel = new MainMenuModel();
+            MainMenuView mainMenuView = new MainMenuView();
+            stage.getScene().setRoot(mainMenuView);
+            MainMenuController mainMenuController = new MainMenuController(mainMenuModel, mainMenuView, stage);
+            
+        });
+        
+        
+    }
+    
+    
+    
+}

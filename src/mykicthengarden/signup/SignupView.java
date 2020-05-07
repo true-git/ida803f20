@@ -28,6 +28,36 @@ public class SignupView extends BorderPane {
     
     private Button back_button;
     private Button signup_button;
+    private TextField first_name_text;
+    private TextField last_name_text;
+    private TextField email_text;
+    private PasswordField password_text;
+    private DatePicker birthday_picker;
+    private TextField city_textfield;
+
+    public TextField getFirst_name_text() {
+        return first_name_text;
+    }
+
+    public TextField getLast_name_text() {
+        return last_name_text;
+    }
+
+    public TextField getEmail_text() {
+        return email_text;
+    }
+
+    public PasswordField getPassword_text() {
+        return password_text;
+    }
+
+    public DatePicker getBirthday_picker() {
+        return birthday_picker;
+    }
+
+    public TextField getCity_textfield() {
+        return city_textfield;
+    }
 
     public Button getBack_button() {
         return back_button;
@@ -79,34 +109,34 @@ public class SignupView extends BorderPane {
         signup_button.setId("menu_button_small");
         
         //Text field for first name
-        TextField first_name_text = new TextField();
+        first_name_text = new TextField();
         first_name_text.setPromptText("Fornavn");
         first_name_text.setId("textfield_small");
         
         //Text field for last name
-        TextField last_name_text= new TextField();
+        last_name_text = new TextField();
         last_name_text.setPromptText("Efternavn");
         last_name_text.setId("textfield_small");
         
         //Text field for e-mail
-        TextField email_text= new TextField();
+        email_text = new TextField();
         email_text.setPromptText("E-mail");
         email_text.setId("textfield_small");
         
         //Password field for password
-        PasswordField password_text = new PasswordField();
+        password_text = new PasswordField();
         password_text.setPromptText("Kodeord");
         password_text.setId("textfield_small");
         
         
         //DatePicker for birthday
-        DatePicker birthday_picker = new DatePicker();
+        birthday_picker = new DatePicker();
         birthday_picker.setPromptText("Vælg fødselsdag");
         birthday_picker.setId("textfield_small");
-         birthday_picker.setStyle("-fx-pref-width: 300;");
+        birthday_picker.setStyle("-fx-pref-width: 300;");
         
         //ComboBox for city
-        TextField city_textfield = new TextField();
+        city_textfield = new TextField();
         city_textfield.setId("textfield_small");
         city_textfield.setPromptText("By");
         
@@ -128,7 +158,6 @@ public class SignupView extends BorderPane {
         female_button.setToggleGroup(radioGroup);
         male_button.setToggleGroup(radioGroup);
         other_button.setToggleGroup(radioGroup);
-        
         
         //Putting text fields first name and last name in a HBox
         HBox icon_label_box = new HBox(20);

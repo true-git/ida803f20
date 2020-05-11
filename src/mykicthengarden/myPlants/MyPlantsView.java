@@ -29,19 +29,19 @@ public class MyPlantsView extends BorderPane {
     
     Label plant_label;
     private Button back_button;
-    private Button list_button;
-    private Button plus_button;
+    private Button burgerMenu;
+    private Button addPlantButton;
 
     public Button getBack_button() {
         return back_button;
     }
 
-    public Button getList_button() {
-        return list_button;
+    public Button getBurgerMenu() {
+        return burgerMenu;
     }
 
-    public Button getPlus_button() {
-        return plus_button;
+    public Button getAddPlantButton() {
+        return addPlantButton;
     }
     
     public MyPlantsView() {
@@ -53,14 +53,14 @@ public class MyPlantsView extends BorderPane {
         back_button.setId("buttons");
         
         //Button to change list menu
-        list_button = new Button();
+        burgerMenu = new Button();
         Image list_icon = new Image ("https://img.icons8.com/material-rounded/40/000000/list.png", 40, 40, false, true);
-        list_button.setGraphic(new ImageView(list_icon));
-        list_button.setId("buttons");
+        burgerMenu.setGraphic(new ImageView(list_icon));
+        burgerMenu.setId("buttons");
         
         //Plus button to add plants
-        plus_button = new Button("Tilføj plante");
-        plus_button.setId("menu_button_small");
+        addPlantButton = new Button("Tilføj plante");
+        addPlantButton.setId("menu_button_small");
         
          //Icon label 
         Label image_label = new Label("Mine Planter");
@@ -130,12 +130,12 @@ public class MyPlantsView extends BorderPane {
         
         //Stackpane for back button
         HBox hbox_top = new HBox(200);
-        hbox_top.getChildren().addAll(back_button, list_button);
+        hbox_top.getChildren().addAll(back_button, burgerMenu);
         hbox_top.setPadding(new Insets (20,0,0,20));
         
         //Stackpane for plus button
-        StackPane stackpane_plus_button = new StackPane(plus_button);
-        StackPane.setAlignment(plus_button, Pos.BOTTOM_CENTER);
+        StackPane stackpane_plus_button = new StackPane(addPlantButton);
+        StackPane.setAlignment(addPlantButton, Pos.BOTTOM_CENTER);
         stackpane_plus_button.setPadding(new Insets(20, 0, 30, 0));     
         
         //The BorderPane is created called layout

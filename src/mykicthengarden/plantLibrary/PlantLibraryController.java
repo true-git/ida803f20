@@ -20,8 +20,8 @@ public class PlantLibraryController {
         
         plantLibraryView.getBack_button().setOnAction(e -> {
             
-            MainMenuModel mainMenuModel = new MainMenuModel();
-            MainMenuView mainMenuView = new MainMenuView();
+            MainMenuModel mainMenuModel = new MainMenuModel(plantLibraryModel.user_id, plantLibraryModel.userName);
+            MainMenuView mainMenuView = new MainMenuView(plantLibraryModel.userName);
             stage.getScene().setRoot(mainMenuView);
             MainMenuController mainMenuController = new MainMenuController(mainMenuModel, mainMenuView, stage);
             

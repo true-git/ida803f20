@@ -6,9 +6,15 @@
 package mykicthengarden.myPlants;
 
 import javafx.stage.Stage;
+import mykicthengarden.addPlants.AddPlantsController;
+import mykicthengarden.addPlants.AddPlantsModel;
+import mykicthengarden.addPlants.AddPlantsView;
 import mykicthengarden.mainMenu.MainMenuController;
 import mykicthengarden.mainMenu.MainMenuModel;
 import mykicthengarden.mainMenu.MainMenuView;
+import mykicthengarden.plantLibrary.PlantLibraryController;
+import mykicthengarden.plantLibrary.PlantLibraryModel;
+import mykicthengarden.plantLibrary.PlantLibraryView;
 
 /**
  *
@@ -18,14 +24,24 @@ public class MyPlantsController {
 
     public MyPlantsController(MyPlantsModel myPlantsModel, MyPlantsView myPlantsView, Stage stage) {
         
-        
+        //Back button navigation
         myPlantsView.getBack_button().setOnAction(e -> {
             
-            MainMenuModel mainMenuModel = new MainMenuModel();
-            MainMenuView mainMenuView = new MainMenuView();
+            MainMenuModel mainMenuModel = new MainMenuModel(myPlantsModel.user_id, myPlantsModel.userName);
+            MainMenuView mainMenuView = new MainMenuView(myPlantsModel.userName);
             stage.getScene().setRoot(mainMenuView);
             MainMenuController mainMenuController = new MainMenuController(mainMenuModel, mainMenuView, stage);
-            
+        });
+        
+        
+        
+        myPlantsView.getAddPlantButton().setOnAction(e -> {
+        
+            AddPlantsModel addPlantsModel = new AddPlantsModel(myPlantsModel.user_id, myPlantsModel.userName);
+            AddPlantsView addPlantsView = new AddPlantsView();
+            //addPlantsModel.setUserId(myPlantsModel.user_id);
+            stage.getScene().setRoot(addPlantsView);
+            AddPlantsController addPlantsController = new AddPlantsController(addPlantsModel, addPlantsView, stage);
             
         });
         

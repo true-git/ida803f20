@@ -26,9 +26,10 @@ public class MainMenuController {
         
         
         mainMenuView.getButton_my_plants().setOnAction(e -> {
-            System.out.print("test");
-            MyPlantsModel myPlantsModel = new MyPlantsModel();
+           
+            MyPlantsModel myPlantsModel = new MyPlantsModel(mainMenuModel.user_id, mainMenuModel.userName);
             MyPlantsView myPlantsView = new MyPlantsView();
+            //myPlantsModel.setUserId(mainMenuModel.user_id);
             stage.getScene().setRoot(myPlantsView);
             MyPlantsController myPlantsController = new MyPlantsController(myPlantsModel, myPlantsView, stage);
             
@@ -36,7 +37,7 @@ public class MainMenuController {
         
         mainMenuView.getButton_plant_library().setOnAction(e -> {
             System.out.print("test");
-            PlantLibraryModel plantLibraryModel = new PlantLibraryModel();
+            PlantLibraryModel plantLibraryModel = new PlantLibraryModel(mainMenuModel.user_id, mainMenuModel.userName);
             PlantLibraryView plantLibraryView = new PlantLibraryView();
             stage.getScene().setRoot(plantLibraryView);
             PlantLibraryController plantLibraryController = new PlantLibraryController(plantLibraryModel, plantLibraryView, stage);
@@ -56,7 +57,7 @@ public class MainMenuController {
         
         mainMenuView.getButton_ask_expert().setOnAction(e ->{
             System.out.print("test");
-            AskExpertsModel askExpertsModel = new AskExpertsModel();
+            AskExpertsModel askExpertsModel = new AskExpertsModel(mainMenuModel.user_id, mainMenuModel.userName);
             AskExpertsView askExpertsView = new AskExpertsView();
             stage.getScene().setRoot(askExpertsView);
             AskExpertsController askExpertsController = new AskExpertsController(askExpertsModel, askExpertsView, stage);

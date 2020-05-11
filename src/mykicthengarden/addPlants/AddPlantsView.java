@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mykicthengarden.Views;
+package mykicthengarden.addPlants;
 
+import java.time.LocalDate;
+import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -27,19 +29,56 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
+
+
 /**
  *
  * @author Team PlantLet
  */
-public class AddPlants_GUI extends BorderPane {
-       private Button back_button, button_alert_OK, ok_button;
-       private TextField input;
-
+public class AddPlantsView extends BorderPane {
+    
+       
+    private Button back_button, button_alert_OK, ok_button;
+    private String input;
+    private final TextField search_textField;
+    private final DatePicker date_picker;
+    private final ComboBox state_box;
+    private LocalDate date;
+    private String state;
+    
+    
+    
     public Button getBack_button() {
         return back_button;
     }
+
+    public Button getOk_button() {
+        return ok_button;
+    }
+
+    public void setOk_button(Button ok_button) {
+        this.ok_button = ok_button;
+    }
+
+    public String getInput() {
+        input = search_textField.getText();
+        return input;
+    }
+
+    public LocalDate getDate() {
+        date = date_picker.getValue();
+        return date;
+    }
     
-    public AddPlants_GUI() {
+    public String getState() {
+        state = state_box.getValue().toString();
+        return state;
+    }
+    
+    
+
+    
+    public AddPlantsView() {
        
         //Making the Back button
         back_button = new Button();
@@ -65,7 +104,7 @@ public class AddPlants_GUI extends BorderPane {
         hbox_icon_and_label.setAlignment(Pos.CENTER);
         
         //TextField bar added for search bar
-        TextField search_textField = new TextField();
+        search_textField = new TextField();
         search_textField.setId("textfield");
         search_textField.setMaxSize(Control.USE_PREF_SIZE, Control.USE_PREF_SIZE);
        
@@ -84,7 +123,7 @@ public class AddPlants_GUI extends BorderPane {
         ComboBox dates_box = new ComboBox(FXCollections.observableArrayList(dates)); 
         ComboBox months_box = new ComboBox(FXCollections.observableArrayList(months));
         ComboBox years_box = new ComboBox(FXCollections.observableArrayList(years));
-        ComboBox state_box = new ComboBox(FXCollections.observableArrayList(state)); 
+        state_box = new ComboBox(FXCollections.observableArrayList(state)); 
         
         //Styles for comboboxes 
         //plants_box.setStyle("-fx-pref-width: 270;-fx-font-size:20;");
@@ -96,7 +135,7 @@ public class AddPlants_GUI extends BorderPane {
         state_box.setPromptText("Stand");
         
         //Calendar to registrate when the plant has been added
-        DatePicker date_picker = new DatePicker();
+        date_picker = new DatePicker();
         date_picker.setId("textfield");
         date_picker.setPromptText("Vælg dato");
         
@@ -125,10 +164,10 @@ public class AddPlants_GUI extends BorderPane {
         setBottom(pane2);
         setCenter(vbox_add);
  
-  // Alert when suggestion is accepted
-   Alert alert_accept_OK = new Alert(AlertType.NONE);
+        //Alert when suggestion is accepted
+        Alert alert_accept_OK = new Alert(AlertType.NONE);
 
-        EventHandler<ActionEvent> event_alert_accept = new EventHandler<ActionEvent>() {
+        EventHandler<ActionEvent> event_alert_accept = new EventHandler<>() {
             public void handle(ActionEvent e) {
 
                 // set alert type 
@@ -149,4 +188,10 @@ public class AddPlants_GUI extends BorderPane {
         // when button is pressed
         ok_button.setOnAction(event_alert_accept);
     }
+
+    public ComboBox getState_box() {
+        return state_box;
+    }
+
+    
 }

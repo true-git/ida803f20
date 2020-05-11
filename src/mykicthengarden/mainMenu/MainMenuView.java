@@ -32,6 +32,7 @@ public class MainMenuView extends BorderPane {
     private MenuItem menu_item_settings;
     private final Image menu_icon;
     private final MenuItem menu_item_log_out;
+    private String userName;
 
     public Button getButton_my_plants() {
         return button_my_plants;
@@ -61,9 +62,15 @@ public class MainMenuView extends BorderPane {
         return menu_item_log_out;
     }
     
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    
     
 
-    public MainMenuView() {
+    public MainMenuView(String userName) {
+        
+        
         
         //Menu for setting / logout
         MenuButton combox_menu = new MenuButton();
@@ -87,7 +94,7 @@ public class MainMenuView extends BorderPane {
                 
         //Label for header
         Label label_header = new Label();
-        label_header.setText("Hej Bruger!");
+        label_header.setText("Hej " + userName + "!");
         label_header.setId("titles");
         label_header.setPadding(new Insets(0,0,20,0));
         

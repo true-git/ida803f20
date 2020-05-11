@@ -21,8 +21,8 @@ public class AskExpertsController {
         //Back button 
         askExpertsView.getBack_button().setOnAction(e -> {
             
-            MainMenuModel mainMenuModel = new MainMenuModel();
-            MainMenuView mainMenuView = new MainMenuView();
+            MainMenuModel mainMenuModel = new MainMenuModel(askExpertsModel.user_id, askExpertsModel.userName);
+            MainMenuView mainMenuView = new MainMenuView(askExpertsModel.userName);
             stage.getScene().setRoot(mainMenuView);
             MainMenuController mainMenuController = new MainMenuController(mainMenuModel, mainMenuView, stage);
             

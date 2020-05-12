@@ -17,7 +17,7 @@ import mykicthengarden.Views.DatabaseConnection;
  * @author Kasper
  */
 public class LoginModel {
-
+  
     DatabaseConnection dbc;
 
 //    public LoginModel(DatabaseConnection dbc) {
@@ -42,5 +42,4 @@ public class LoginModel {
         }
         return false;
     }
-
 }

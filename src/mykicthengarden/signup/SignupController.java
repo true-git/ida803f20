@@ -5,9 +5,6 @@
  */
 package mykicthengarden.signup;
 
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.stage.Stage;
 import mykicthengarden.login.LoginController;
 import mykicthengarden.login.LoginModel;
@@ -21,10 +18,7 @@ import mykicthengarden.mainMenu.MainMenuView;
  * @author Kasper
  */
 public class SignupController {
-    
-    public SignupController(SignupModel signupModel, SignupView signupView, Stage stage) {
-
-        //When back button is clicked, go to login view
+  
         signupView.getBack_button().setOnAction(e -> {
             LoginModel loginModel = new LoginModel();
             LoginView loginView = new LoginView();

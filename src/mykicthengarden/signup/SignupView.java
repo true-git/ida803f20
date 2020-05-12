@@ -187,6 +187,7 @@ public class SignupView extends BorderPane {
         info_box.setSpacing(10);
         info_box.setAlignment(Pos.TOP_CENTER);
         info_box.setPadding( new Insets(30,0,0,0));
+      
 //        info_box.getChildren().addAll(icon_label_box,user_box,name_box,birthday_picker,city_textfield,radiobutton_box,signup_button);
         info_box.getChildren().addAll(icon_label_box,user_box,name_box,city_textfield,signup_button);
         

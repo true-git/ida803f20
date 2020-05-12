@@ -52,9 +52,13 @@ public class SignupModel {
         // Establish connection to the database
         dbc.getConnection();
         // SQL query as a string that updates the users table by inserting the arguments in a new record
-        String query = "INSERT INTO users (firstname, lastname, email, pass, city, gender, dateofbirth, isLoggedIn)"
-//                + " VALUES ('" + firstName + "', '" + lastName + "', '" + email + "', '" + password + "', '" + city + "', '" + firstName + "', '" + firstName + "', '" + firstName + "');";
-                + " VALUES ('" + firstName + "', '" + lastName + "', '" + email + "', '" + password + "', '" + city + "', 'other', '1985-10-12', false);";
+        String query = "INSERT INTO users (firstname, lastname, email, pass, city) VALUES "
+                + "('" + firstName + 
+                "', '" + lastName + 
+                "', '" + email + 
+                "', '" + password + 
+                "', '" + city +
+                "')";
         // Execute the query
         dbc.getMyStmt().executeUpdate(query);
     }

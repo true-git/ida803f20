@@ -32,7 +32,7 @@ public class SignupView extends BorderPane {
     private TextField last_name_text;
     private TextField email_text;
     private PasswordField password_text;
-    private DatePicker birthday_picker;
+//    private DatePicker birthday_picker;
     private TextField city_textfield;
 
     public TextField getFirst_name_text() {
@@ -51,9 +51,9 @@ public class SignupView extends BorderPane {
         return password_text;
     }
 
-    public DatePicker getBirthday_picker() {
-        return birthday_picker;
-    }
+//    public DatePicker getBirthday_picker() {
+//        return birthday_picker;
+//    }
 
     public TextField getCity_textfield() {
         return city_textfield;
@@ -130,10 +130,10 @@ public class SignupView extends BorderPane {
         
         
         //DatePicker for birthday
-        birthday_picker = new DatePicker();
-        birthday_picker.setPromptText("Vælg fødselsdag");
-        birthday_picker.setId("textfield_small");
-        birthday_picker.setStyle("-fx-pref-width: 300;");
+//        birthday_picker = new DatePicker();
+//        birthday_picker.setPromptText("Vælg fødselsdag");
+//        birthday_picker.setId("textfield_small");
+//        birthday_picker.setStyle("-fx-pref-width: 300;");
         
         //ComboBox for city
         city_textfield = new TextField();
@@ -142,22 +142,22 @@ public class SignupView extends BorderPane {
         
         
         //Radio button for female
-        RadioButton female_button = new RadioButton("Kvinde");
-        female_button.setId("radio_buttons");
+//        RadioButton female_button = new RadioButton("Kvinde");
+//        female_button.setId("radio_buttons");
         
         //Radio button for male
-        RadioButton male_button = new RadioButton("Mand");
-        male_button.setId("radio_buttons");
+//        RadioButton male_button = new RadioButton("Mand");
+//        male_button.setId("radio_buttons");
         
         //Radio button for other
-        RadioButton other_button = new RadioButton("Andet");
-        other_button.setId("radio_buttons");
+//        RadioButton other_button = new RadioButton("Andet");
+//        other_button.setId("radio_buttons");
         
         //Toggle group for the radio buttons
-        ToggleGroup radioGroup = new ToggleGroup();
-        female_button.setToggleGroup(radioGroup);
-        male_button.setToggleGroup(radioGroup);
-        other_button.setToggleGroup(radioGroup);
+//        ToggleGroup radioGroup = new ToggleGroup();
+//        female_button.setToggleGroup(radioGroup);
+//        male_button.setToggleGroup(radioGroup);
+//        other_button.setToggleGroup(radioGroup);
         
         //Putting text fields first name and last name in a HBox
         HBox icon_label_box = new HBox(20);
@@ -176,18 +176,19 @@ public class SignupView extends BorderPane {
         user_box.getChildren().addAll(email_text,password_text);
         
         //Putting radio buttons in a HBox
-        HBox radiobutton_box = new HBox();
-        radiobutton_box.setSpacing(10);
-        radiobutton_box.setPadding(new Insets(20,0,20,0));
-        radiobutton_box.setAlignment(Pos.CENTER);
-        radiobutton_box.getChildren().addAll(female_button,male_button,other_button);
+//        HBox radiobutton_box = new HBox();
+//        radiobutton_box.setSpacing(10);
+//        radiobutton_box.setPadding(new Insets(20,0,20,0));
+//        radiobutton_box.setAlignment(Pos.CENTER);
+//        radiobutton_box.getChildren().addAll(female_button,male_button,other_button);
         
         //Putting user info in VBox
         VBox info_box = new VBox();
         info_box.setSpacing(10);
         info_box.setAlignment(Pos.TOP_CENTER);
         info_box.setPadding( new Insets(30,0,0,0));
-        info_box.getChildren().addAll(icon_label_box,user_box,name_box,birthday_picker,city_textfield,radiobutton_box,signup_button);
+//        info_box.getChildren().addAll(icon_label_box,user_box,name_box,birthday_picker,city_textfield,radiobutton_box,signup_button);
+        info_box.getChildren().addAll(icon_label_box,user_box,name_box,city_textfield,signup_button);
         
         
         //The BorderPane is created called layout

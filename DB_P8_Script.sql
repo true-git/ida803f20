@@ -51,5 +51,3 @@ CREATE TABLE registred_plants (
     foreign key (plant_id) references plantlibrary (plant_id)
 );
 
-
-

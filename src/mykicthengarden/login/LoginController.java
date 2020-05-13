@@ -74,7 +74,6 @@ public class LoginController {
         loginView.getGuest_button().setOnAction(e -> {
             
             String email_text = loginView.getEmail_text().getText();
-            String pass = loginView.getPassword_text().getText();
             
             try {
                 MainMenuModel mainMenuModel = new MainMenuModel(loginModel.getUserId(email_text), loginModel.getUserName(email_text));

@@ -31,6 +31,8 @@ public class MyPlantsView extends BorderPane {
     private Button back_button;
     private Button burgerMenu;
     private Button addPlantButton;
+    private ArrayList plantList;
+    
 
     public Button getBack_button() {
         return back_button;
@@ -44,7 +46,7 @@ public class MyPlantsView extends BorderPane {
         return addPlantButton;
     }
     
-    public MyPlantsView() {
+    public MyPlantsView(int user_id) {
         
         //Back button with image
         back_button = new Button();

@@ -2,20 +2,17 @@ package mykicthengarden.Views;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
  *
  * @author Team PlantLet
- * 
- * 4. Process the result set
-         while (myRs.next()) {
-             myRs.getString("column_name");
-         } 
+ *
+ * 4. Process the result set while (myRs.next()) {
+ * myRs.getString("column_name"); }
  */
 public class DatabaseConnection {
-    
+
     private Connection myConn = null;
     private Statement myStmt = null;
 

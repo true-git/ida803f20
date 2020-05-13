@@ -36,7 +36,7 @@ public class AddPlantsController {
         
         addPlantsView.getBack_button().setOnAction(e -> {
             MyPlantsModel myPlantsModel = new MyPlantsModel(addPlantsModel.user_id, addPlantsModel.userName);
-            MyPlantsView myPlantsView = new MyPlantsView();
+            MyPlantsView myPlantsView = new MyPlantsView(addPlantsModel.user_id);
             stage.getScene().setRoot(myPlantsView);
             MyPlantsController myPlantsController = new MyPlantsController(myPlantsModel, myPlantsView, stage);
         });

@@ -19,6 +19,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import mykicthengarden.mainMenu.MainMenuModel;
 
 
 /**
@@ -31,7 +32,7 @@ public class MyPlantsView extends BorderPane {
     private Button back_button;
     private Button burgerMenu;
     private Button addPlantButton;
-    
+
     public Button getBack_button() {
         return back_button;
     }
@@ -44,7 +45,7 @@ public class MyPlantsView extends BorderPane {
         return addPlantButton;
     }
     
-    public MyPlantsView() {
+    public MyPlantsView(int user_id) {
         
         //Back button with image
         back_button = new Button();

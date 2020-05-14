@@ -8,11 +8,12 @@ package mykicthengarden.myPlants;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javafx.scene.image.Image;
 import mykicthengarden.Views.DatabaseConnection;
 
 /**
  *
- * @author jacobchristensen
+ * @author PlantLet Team
  */
 public class MyPlantsModel {
     
@@ -26,13 +27,28 @@ public class MyPlantsModel {
         this.user_id = user_id;
         this.userName = userName;
         dbc = new DatabaseConnection();
-        //myPlantsArray = getMyPlants(user_id);
+    }
+    
+    public ArrayList<Plant> getRegisteredPlants() throws SQLException{
+        ArrayList<Plant> registeredPlants = new ArrayList<>();
+        Image plant_image1 = new Image ("https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-260nw-1037719192.jpg", 120, 120, false, true);
         
+//        String query = "Select common_name from plants where common_name = '" + searchTerm + "'";
+        String query = "select * from plants where plant_id in (select plant_id from registered_plants where user_id = '" + user_id + "')";
         
-        
-        //System.out.println(myPlantsArray);
-        
-        
+        dbc.getConnection();
+        try {
+            ResultSet myRs = dbc.getMyStmt().executeQuery(query);
+            
+            while(myRs.next()){
+                registeredPlants.add(new Plant(myRs.getString("common_name").toString(), plant_image1));
+                System.out.println(myRs.getString("common_name").toString());
+            } 
+            dbc.getMyConn().close();
+        } finally {
+            dbc.getMyConn().close();
+        }
+        return registeredPlants;
     }
     
 //    private ArrayList getMyPlants(int user_id) {

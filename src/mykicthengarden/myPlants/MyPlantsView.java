@@ -32,6 +32,8 @@ public class MyPlantsView extends BorderPane {
     private Button back_button;
     private Button burgerMenu;
     private Button addPlantButton;
+    GridPane grid_plants;
+//    ArrayList<Plant> registeredPlants;
 
     public Button getBack_button() {
         return back_button;
@@ -79,39 +81,27 @@ public class MyPlantsView extends BorderPane {
         Image plant_image1 = new Image ("https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-260nw-1037719192.jpg", 120, 120, false, true);
         //ImageView plant_imageview1 = new ImageView(plant_image1);
 
-        Plant plant1 = new Plant("Gulerødder", plant_image1);
-        Plant plant2 = new Plant("Kartofler", plant_image1);
-        Plant plant3 = new Plant("Radisser", plant_image1);
+//        Plant plant1 = new Plant("Gulerødder", plant_image1);
+//        Plant plant2 = new Plant("Kartofler", plant_image1);
+//        Plant plant3 = new Plant("Radisser", plant_image1);
         
-        ArrayList<Plant> list = new ArrayList<>();
-        list.add(plant1);
-        list.add(plant2);
-        list.add(plant3);
-        list.add(plant1);
-        list.add(plant2);
-        list.add(plant3);
-        list.add(plant1);
-        list.add(plant2);
-        list.add(plant3);
+//        registeredPlants = new ArrayList<>();
         
-        int row = 0;
-        int column = 0;
+//        list.add(plant1);
+//        list.add(plant2);
+//        list.add(plant3);
+//        list.add(plant1);
+//        list.add(plant2);
+//        list.add(plant3);
+//        list.add(plant1);
+//        list.add(plant2);
+//        list.add(plant3);
         
         //GridPane for center content
-        GridPane grid_plants = new GridPane();
-        for(Plant p : list ){
-            VBox vbox_content = vbox_generator(p.image, p.name);
-            grid_plants.add(vbox_content, column, row);
-            if (column == 0){
-                column = 1;
-            } else if(column == 1) {
-                column = 0;
-                row ++;
-            }
-        }
+        grid_plants = new GridPane();
 
-        grid_plants .setHgap(30);
-        grid_plants .setVgap(20);
+        grid_plants.setHgap(30);
+        grid_plants.setVgap(20);
         
         //Scroll pane for grid content
         ScrollPane scrollpane_grid = new ScrollPane(grid_plants);
@@ -143,6 +133,26 @@ public class MyPlantsView extends BorderPane {
         setTop(hbox_top);
         setCenter(vbox_icon_and_description);
         setBottom(stackpane_plus_button);
+    }
+    
+    //add plants registered from model/db to view
+    public void addRegisteredPlants(ArrayList<Plant> registeredPlants){
+        
+        int row = 0;
+        int column = 0;
+        
+        //GridPane for center content
+//        GridPane grid_plants = new GridPane();
+        for(Plant p : registeredPlants){
+            VBox vbox_content = vbox_generator(p.image, p.name);
+            grid_plants.add(vbox_content, column, row);
+            if (column == 0){
+                column = 1;
+            } else if(column == 1) {
+                column = 0;
+                row ++;
+            }
+        }
     }
     
     private VBox vbox_generator(Image image, String name) {

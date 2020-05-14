@@ -32,7 +32,7 @@ public class AddPlantsModel {
     
     //Chech if the plant exists in the database
     public boolean plantExists(String searchTerm) throws SQLException {
-        String query = "Select common_name from plantlibrary where common_name = '" + searchTerm + "'";
+        String query = "Select common_name from plants where common_name = '" + searchTerm + "'";
         
         dbc.getConnection();
         try {
@@ -52,7 +52,7 @@ public class AddPlantsModel {
     }
 
     public Integer getPlantId(String searchTerm) throws SQLException {
-        String query = "Select plant_id from plantlibrary where common_name = '" + searchTerm + "';";
+        String query = "Select plant_id from plants where common_name = '" + searchTerm + "';";
         
         dbc.getConnection();
         try {
@@ -72,7 +72,7 @@ public class AddPlantsModel {
     
     public void registrePlant(Integer user_id, Integer plant_id, LocalDate date, String state) throws SQLException {
         
-        String query = "Insert into registred_plants values ('" + user_id + "', '" + plant_id + "', '"+ state + "', '" + date + "');"; 
+        String query = "Insert into registered_plants values ('" + user_id + "', '" + plant_id + "', '"+ state + "', '" + date + "');"; 
         
         dbc.getConnection();
         

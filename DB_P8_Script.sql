@@ -15,16 +15,14 @@ CREATE TABLE users (
   email varchar(64) NOT NULL,
   pass varchar (64) NOT NULL,
   city varchar(64) NOT NULL, 
-  gender ENUM ('male', 'female', 'other') NOT NULL,
-  dateofbirth DATE NOT NULL, 
-  isLoggedIn BOOLEAN NOT NULL,
   PRIMARY KEY (user_id)
   
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
-INSERT INTO users (firstname, lastname, email, pass, city, gender, dateofbirth, isLoggedIn) VALUES 
-('Test', 'Jensen', 'testperson@plantlet.dk', 'salt', 'Testkøbing', 'other', '1985-10-12', false),
-('Test2', 'Hansen', 'test2@email.com', 'peber', 'Nykøbing', 'male', '2000-01-01', false);
+INSERT INTO users (firstname, lastname, email, pass, city) VALUES 
+('Test', 'Jensen', 'testperson@plantlet.dk', 'salt', 'Testkøbing'),
+('Test2', 'Hansen', 'test2@email.com', 'peber', 'Nykøbing'),
+('Donald', 'Trump', 'duck@scor.dk', 'dt', 'dc');
  
  
 CREATE TABLE plantlibrary (

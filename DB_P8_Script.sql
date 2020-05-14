@@ -22,6 +22,7 @@ CREATE TABLE users (
 INSERT INTO users (firstname, lastname, email, pass, city) VALUES 
 ('Test', 'Jensen', 'testperson@plantlet.dk', 'salt', 'Testkøbing'),
 ('Test2', 'Hansen', 'test2@email.com', 'peber', 'Nykøbing'),
+('T', 'T', 'test', 'test', 'Testby'),
 ('Donald', 'Trump', 'duck@scor.dk', 'dt', 'dc');
  
 CREATE TABLE plants (
@@ -40,7 +41,8 @@ CREATE TABLE plants (
 
 INSERT INTO plants
 (latin_name, common_name, presentation, cultivation, light, soil, watering, temp_moist, fertilizer) VALUES
-('Dandelionius', 'dandelion', 'presentation', 'cultivation', 'light', 'soil', 'watering', 'temp_moist', 'fertilizer');
+('Dandelionius', 'kartofler', 'presentation', 'cultivation', 'light', 'soil', 'watering', 'temp_moist', 'fertilizer'),
+('Dandelionius', 'løg', 'presentation', 'cultivation', 'light', 'soil', 'watering', 'temp_moist', 'fertilizer');
 
 CREATE TABLE registered_plants (
 user_id int(11) NOT NULL,

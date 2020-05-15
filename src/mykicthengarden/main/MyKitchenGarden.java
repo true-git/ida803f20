@@ -29,7 +29,7 @@ public class MyKitchenGarden extends Application {
         
         primaryStage.setTitle("PlantLet");
         primaryStage.setScene(new Scene(loginView, 357, 667));
-        primaryStage.getScene().getStylesheets().add("mykitchengarden/layoutstyles.css");
+        primaryStage.getScene().getStylesheets().add(MyKitchenGarden.class.getResource("layoutstyles.css").toExternalForm());
         primaryStage.show();
         primaryStage.setResizable(false);
 

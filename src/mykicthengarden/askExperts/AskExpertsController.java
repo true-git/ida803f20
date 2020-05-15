@@ -12,7 +12,7 @@ import mykicthengarden.mainMenu.MainMenuView;
 
 /**
  *
- * @author jacobchristensen
+ * @author Team PlantLet
  */
 public class AskExpertsController {
 

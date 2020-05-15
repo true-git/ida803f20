@@ -18,7 +18,7 @@ import mykicthengarden.plantLibrary.PlantLibraryView;
 
 /**
  *
- * @author jacobchristensen
+ * @author Team PlantLet
  */
 public class MainMenuController {
     

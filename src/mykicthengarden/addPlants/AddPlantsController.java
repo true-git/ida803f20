@@ -14,7 +14,7 @@ import mykicthengarden.myPlants.MyPlantsView;
 
 /**
  *
- * @author jacobchristensen
+ * @author Team PlantLet
  */
 public class AddPlantsController {
 

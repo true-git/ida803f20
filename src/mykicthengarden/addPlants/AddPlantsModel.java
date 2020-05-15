@@ -15,7 +15,7 @@ import mykicthengarden.Views.DatabaseConnection;
 
 /**
  *
- * @author jacobchristensen
+ * @author Team PlantLet
  */
 public class AddPlantsModel {
     

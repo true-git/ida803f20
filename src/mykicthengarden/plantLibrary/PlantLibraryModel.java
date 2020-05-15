@@ -7,7 +7,7 @@ package mykicthengarden.plantLibrary;
 
 /**
  *
- * @author jacobchristensen
+ * @author Team PlantLet
  */
 public class PlantLibraryModel {
 

@@ -7,7 +7,7 @@ package mykicthengarden.askExperts;
 
 /**
  *
- * @author jacobchristensen
+ * @author Team PlantLet
  */
 public class AskExpertsModel {
     

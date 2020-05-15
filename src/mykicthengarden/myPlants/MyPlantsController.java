@@ -6,6 +6,8 @@
 package mykicthengarden.myPlants;
 
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.stage.Stage;
 import mykicthengarden.addPlants.AddPlantsController;
 import mykicthengarden.addPlants.AddPlantsModel;
@@ -13,9 +15,6 @@ import mykicthengarden.addPlants.AddPlantsView;
 import mykicthengarden.mainMenu.MainMenuController;
 import mykicthengarden.mainMenu.MainMenuModel;
 import mykicthengarden.mainMenu.MainMenuView;
-import mykicthengarden.plantLibrary.PlantLibraryController;
-import mykicthengarden.plantLibrary.PlantLibraryModel;
-import mykicthengarden.plantLibrary.PlantLibraryView;
 
 /**
  *
@@ -23,10 +22,14 @@ import mykicthengarden.plantLibrary.PlantLibraryView;
  */
 public class MyPlantsController {
 
-    public MyPlantsController(MyPlantsModel myPlantsModel, MyPlantsView myPlantsView, Stage stage) throws SQLException {
+    public MyPlantsController(MyPlantsModel myPlantsModel, MyPlantsView myPlantsView, Stage stage) {
         
-        //Get the user's plants from model/db and update view
-        myPlantsView.addRegisteredPlants(myPlantsModel.getRegisteredPlants());
+        try {
+            //Get the user's plants from model/db and update view
+            myPlantsView.addRegisteredPlants(myPlantsModel.getRegisteredPlants());
+        } catch (SQLException ex) {
+            Logger.getLogger(MyPlantsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         //Back button navigation
         myPlantsView.getBack_button().setOnAction(e -> {

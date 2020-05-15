@@ -6,10 +6,6 @@
 package mykicthengarden.addPlants;
 
 import java.time.LocalDate;
-import java.util.Date;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 import mykicthengarden.Views.DatabaseConnection;
 import mykicthengarden.myPlants.MyPlantsController;

@@ -13,7 +13,7 @@ import mykicthengarden.Views.DatabaseConnection;
 
 /**
  *
- * @author PlantLet Team
+ * @author Team PlantLet
  */
 public class MyPlantsModel {
     
@@ -50,27 +50,4 @@ public class MyPlantsModel {
         }
         return registeredPlants;
     }
-    
-//    private ArrayList getMyPlants(int user_id) {
-//        ArrayList<String> myPlants = new ArrayList<>();
-//        String query = "Select plant_id from registred_plants where user_id = '" + user_id + "'";
-//        //dbc.getConnection();
-//        try{
-//            ResultSet myRs = dbc.getMyStmt().executeQuery(query);
-//            while (myRs.next()) {
-//                myPlants.add(myRs.getString("plant_id"));
-//                
-//                
-//        } 
-//        
-//        }catch (SQLException e) {}
-//        return null;
-//    }
-    
-    
-    
-    
-
-    
-    
 }

@@ -78,24 +78,8 @@ public class MyPlantsView extends BorderPane {
         description_label.setFont(new Font("Calibri", 18));
         
         //Imageviews and labels for testing of placement for center content
-        Image plant_image1 = new Image ("https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-260nw-1037719192.jpg", 120, 120, false, true);
+//        Image plant_image1 = new Image ("https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-260nw-1037719192.jpg", 120, 120, false, true);
         //ImageView plant_imageview1 = new ImageView(plant_image1);
-
-//        Plant plant1 = new Plant("Gulerødder", plant_image1);
-//        Plant plant2 = new Plant("Kartofler", plant_image1);
-//        Plant plant3 = new Plant("Radisser", plant_image1);
-        
-//        registeredPlants = new ArrayList<>();
-        
-//        list.add(plant1);
-//        list.add(plant2);
-//        list.add(plant3);
-//        list.add(plant1);
-//        list.add(plant2);
-//        list.add(plant3);
-//        list.add(plant1);
-//        list.add(plant2);
-//        list.add(plant3);
         
         //GridPane for center content
         grid_plants = new GridPane();

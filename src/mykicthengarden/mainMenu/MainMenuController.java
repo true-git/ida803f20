@@ -5,6 +5,9 @@
  */
 package mykicthengarden.mainMenu;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.stage.Stage;
 import mykicthengarden.askExperts.AskExpertsController;
 import mykicthengarden.askExperts.AskExpertsModel;
@@ -29,7 +32,11 @@ public class MainMenuController {
             MyPlantsModel myPlantsModel = new MyPlantsModel(mainMenuModel.user_id, mainMenuModel.userName);
             MyPlantsView myPlantsView = new MyPlantsView(mainMenuModel.user_id);
             stage.getScene().setRoot(myPlantsView);
-            MyPlantsController myPlantsController = new MyPlantsController(myPlantsModel, myPlantsView, stage);  
+            try {  
+                MyPlantsController myPlantsController = new MyPlantsController(myPlantsModel, myPlantsView, stage);
+            } catch (SQLException ex) {
+                Logger.getLogger(MainMenuController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
         
         mainMenuView.getButton_plant_library().setOnAction(e -> {

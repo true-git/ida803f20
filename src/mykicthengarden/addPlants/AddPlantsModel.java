@@ -43,10 +43,10 @@ public class AddPlantsModel {
                     dbc.getMyConn().close();
                     return true;
                 }
-            }
-        } finally {
+            } 
+        } catch (SQLException ex) {} finally {
             dbc.getMyConn().close();
-        }
+        } 
       
         return false;
     }
@@ -64,7 +64,7 @@ public class AddPlantsModel {
                 return plant_id;
             }
  
-        } finally {
+        } catch (SQLException ex) {} finally {
             dbc.getMyConn().close(); 
         }
         return null;
@@ -79,7 +79,7 @@ public class AddPlantsModel {
         try {
         dbc.getMyStmt().executeUpdate(query);
         dbc.getMyConn().close();
-        } finally {
+        } catch (SQLException ex) {} finally {
             
         }
         

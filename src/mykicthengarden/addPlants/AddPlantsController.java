@@ -5,8 +5,11 @@
  */
 package mykicthengarden.addPlants;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -38,7 +41,13 @@ public class AddPlantsController {
             MyPlantsModel myPlantsModel = new MyPlantsModel(addPlantsModel.user_id, addPlantsModel.userName);
             MyPlantsView myPlantsView = new MyPlantsView(addPlantsModel.user_id);
             stage.getScene().setRoot(myPlantsView);
-            MyPlantsController myPlantsController = new MyPlantsController(myPlantsModel, myPlantsView, stage);
+            
+            try {
+                MyPlantsController myPlantsController = new MyPlantsController(myPlantsModel, myPlantsView, stage);
+            } catch (SQLException ex) {
+                Logger.getLogger(AddPlantsController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         });
         
         

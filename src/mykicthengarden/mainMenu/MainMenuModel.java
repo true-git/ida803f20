@@ -27,7 +27,10 @@ public class MainMenuModel {
         this.userName = userName;
     }
     
-     
+    public String getFirstName() {
+        
+        return userName;
+    }
     
     
     

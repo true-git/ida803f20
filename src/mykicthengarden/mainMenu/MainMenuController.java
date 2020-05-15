@@ -24,7 +24,6 @@ public class MainMenuController {
     
     public MainMenuController(MainMenuModel mainMenuModel, MainMenuView mainMenuView, Stage stage) {
         
-        
         mainMenuView.getButton_my_plants().setOnAction(e -> {
             MyPlantsModel myPlantsModel = new MyPlantsModel(mainMenuModel.user_id, mainMenuModel.userName);
             MyPlantsView myPlantsView = new MyPlantsView(mainMenuModel.user_id);
@@ -40,7 +39,6 @@ public class MainMenuController {
             PlantLibraryController plantLibraryController = new PlantLibraryController(plantLibraryModel, plantLibraryView, stage);      
         });
         
-
         mainMenuView.getButton_ask_expert().setOnAction(e ->{
             System.out.print("test");
             AskExpertsModel askExpertsModel = new AskExpertsModel(mainMenuModel.user_id, mainMenuModel.userName);

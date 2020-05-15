@@ -29,9 +29,6 @@ public class LoginController {
 
     public LoginController(LoginModel loginModel, LoginView loginView, Stage stage) {
        
-        
-        
-
         //get the loginButton. when clicked check if the user exist in the database, and check if the password matches
         loginView.getLogin_button().setOnAction(new EventHandler<ActionEvent>() {
             @Override

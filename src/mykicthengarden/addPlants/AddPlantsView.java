@@ -116,7 +116,7 @@ public class AddPlantsView extends BorderPane {
         String dates[] = {"Dag", "1", "2","3", "4", "5", "6", "7","8","9","10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"};
         String months[] = {"Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"};       
         String years[] = {"2020", "2021", "2022"};
-        String state[] = {"Frø", "Spirre"};
+        String state[] = {"Frø", "Spire"};
         
         //Making a combobox for plants, the dates, and state of the plant
         //ChoiceBox plants_box = new ChoiceBox(FXCollections.observableArrayList(plants)); 

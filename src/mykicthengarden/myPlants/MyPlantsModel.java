@@ -33,8 +33,7 @@ public class MyPlantsModel {
         ArrayList<Plant> registeredPlants = new ArrayList<>();
         Image plant_image1 = new Image ("https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-260nw-1037719192.jpg", 120, 120, false, true);
         
-//        String query = "Select common_name from plants where common_name = '" + searchTerm + "'";
-        String query = "select * from plants where plant_id in (select plant_id from registered_plants where user_id = '" + user_id + "')";
+        String query = "select common_name from plants where plant_id in (select plant_id from registered_plants where user_id = '" + user_id + "')";
         
         dbc.getConnection();
         try {

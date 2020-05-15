@@ -19,8 +19,6 @@ import mykicthengarden.myPlants.MyPlantsView;
 public class AddPlantsController {
 
     private String searchTerm;
-    private String plant;
-    private DatabaseConnection dbc;
     private LocalDate date;
     private String state;
     public int user_id;
@@ -28,8 +26,6 @@ public class AddPlantsController {
 
     public AddPlantsController(AddPlantsModel addPlantsModel, AddPlantsView addPlantsView, Stage stage) {
      
-        
-        
         addPlantsView.getBack_button().setOnAction(e -> {
             MyPlantsModel myPlantsModel = new MyPlantsModel(addPlantsModel.user_id, addPlantsModel.userName);
             MyPlantsView myPlantsView = new MyPlantsView(addPlantsModel.user_id);
@@ -37,15 +33,13 @@ public class AddPlantsController {
             MyPlantsController myPlantsController = new MyPlantsController(myPlantsModel, myPlantsView, stage);
         });
         
-        
-        
         addPlantsView.getOk_button().setOnAction(e -> {
             
             try {
                 //Getting the input of the textfield
                 searchTerm = addPlantsView.getInput();
                 
-                //Check if the user has enterede a valid search term, and return the result.
+                //Check if the user has entered a valid search term, and return the result.
                 if(searchTerm.equals("")){
                     System.out.println("Please select a plant to add.");
                 } else {
@@ -58,21 +52,14 @@ public class AddPlantsController {
                         state = addPlantsView.getState();
                         user_id = addPlantsModel.user_id;
                         
-                        
                         addPlantsModel.registrePlant(user_id, plant_id, date, state);
-                        System.out.println("Plant registred!");
-                        
-                    
+                        System.out.println("Plant registred!");                        
                 } else {
                         System.out.println("We dont have that plant in our database. Please try another plant.");
                     }
-   
-                }
-   
+                }   
             } catch (Exception exception) {
             }
         });
-   
-    }
-   
+    }   
 }

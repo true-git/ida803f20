@@ -34,7 +34,7 @@ public class LoginModel {
     }
 
     public boolean userValidated(String user_email, String pass_word) throws SQLException {
-        String query =  "{call login(?, ?) }"; //"Select pass from users where email = '" + email + "'";
+        String query =  "{call loginRead(?, ?) }"; //"Select pass from users where email = '" + email + "'";
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbName + "?serverTimezone=UTC", user, pass);
         CallableStatement stmt =  conn.prepareCall(query);
         try {

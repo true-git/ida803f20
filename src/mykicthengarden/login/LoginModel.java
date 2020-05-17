@@ -4,6 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.CallableStatement;
 
 import mykicthengarden.Views.DatabaseConnection;
 
@@ -18,6 +21,11 @@ public class LoginModel {
     DatabaseConnection dbc;
     private String userName;
     private int user_id;
+    ResultSet myRs;
+    private String dbName = "kitchengarden";
+    private String user = "kitchengardener";
+    private String pass = "greenfingers";
+    
 
 //    public LoginModel(DatabaseConnection dbc) {
     public LoginModel() {
@@ -25,13 +33,17 @@ public class LoginModel {
         dbc = new DatabaseConnection();
     }
 
-    public boolean userValidated(String email, String password) {
-        String query = "Select pass from users where email = '" + email + "'";
-        dbc.getConnection();
+    public boolean userValidated(String user_email, String pass_word) throws SQLException {
+        String query =  "{call login(?, ?) }"; //"Select pass from users where email = '" + email + "'";
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbName + "?serverTimezone=UTC", user, pass);
+        CallableStatement stmt =  conn.prepareCall(query);
         try {
-            ResultSet myRs = dbc.getMyStmt().executeQuery(query);
+ 
+            stmt.setString(1, user_email);
+            stmt.setString(2, pass_word);
+            myRs = stmt.executeQuery();
             while (myRs.next()) {
-                if (myRs.getString("pass").equals(password)) {
+                if (myRs.getString("pass").equals(pass_word)) {
                     myRs.close();
                     return true;
                 }

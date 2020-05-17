@@ -20,10 +20,12 @@ CREATE TABLE users (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 INSERT INTO users (firstname, lastname, email, pass, city) VALUES 
-('Test', 'Jensen', 'testperson@plantlet.dk', 'salt', 'Testkøbing'),
+('Anna', 'Nas', 'annanas@frugtkompagniet.dk', 'migiegenjuice', 'Rynkeby'),
+('Bo', 'Tanique', 'botanique@haveservice.dk', 'blomsterglad', 'Ålleren');
+/*('Test', 'Jensen', 'testperson@plantlet.dk', 'salt', 'Testkøbing'),
 ('Test2', 'Hansen', 'test2@email.com', 'peber', 'Nykøbing'),
 ('T', 'T', 'test', 'test', 'Testby'),
-('Donald', 'Trump', 'duck@scor.dk', 'dt', 'dc');
+('Donald', 'Trump', 'duck@scor.dk', 'dt', 'dc');*/
  
 CREATE TABLE plants (
   plant_id int NOT NULL auto_increment,

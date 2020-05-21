@@ -46,20 +46,25 @@ public class SignupController {
                 } else {
                     
                     //Create user and update database
-                    signupModel.createUser(signupView.getFirst_name_text().getText(), signupView.getLast_name_text().getText(),
-                            signupView.getEmail_text().getText(), signupView.getPassword_text().getText(),
+                    signupModel.createUser(
+                            signupView.getFirst_name_text().getText(),
+                            signupView.getLast_name_text().getText(),
+                            signupView.getEmail_text().getText(),
+                            signupView.getPassword_text().getText(),
                             signupView.getCity_textfield().getText());
                     //Inform user that account has been created
                     System.out.println("New user created");
                     
                     //Go to mainmenu
-                    MainMenuModel mainMenuModel = new MainMenuModel(signupModel.user_id, signupModel.userName);
-                    MainMenuView mainMenuView = new MainMenuView(signupModel.userName);
+                    MainMenuModel mainMenuModel = new MainMenuModel(
+                            signupModel.user_id, signupModel.userName);
+                    MainMenuView mainMenuView = new MainMenuView(
+                            signupModel.userName);
                     stage.getScene().setRoot(mainMenuView);
-                    MainMenuController mainMenuController = new MainMenuController(mainMenuModel, mainMenuView, stage);
+                    MainMenuController mainMenuController = new MainMenuController(
+                            mainMenuModel, mainMenuView, stage);
                 }
             } catch (Exception ex) {
-               // Logger.getLogger(SignupController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
     }

@@ -26,7 +26,8 @@ public class SignupModel {
     
     // Evaluate if the email exists in the database
     public boolean emailExists(String email) throws SQLException {
-        // SQL query as a string that selects the emails from the users table that matches the email to be evaluated
+        // SQL query as a string that selects the emails from the users table 
+        //that matches the email to be evaluated
         String query = "Select email from users where email = '" + email + "'";
         // Establish connection to the database
         dbc.getConnection();
@@ -35,7 +36,8 @@ public class SignupModel {
             ResultSet myRs = dbc.getMyStmt().executeQuery(query);
             // Go through the result that matched the query
             while (myRs.next()){
-                // If the email is matched to an email in the users table return true
+                // If the email is matched to an email in the users table return
+                // true
                 if(myRs.getString("email").equals(email)){
                     // Close the connection to the database
                     dbc.getMyConn().close();
@@ -51,11 +53,14 @@ public class SignupModel {
     }
     
     // Inserts user to database
-    public void createUser(String firstName, String lastName, String email, String password, String city) throws SQLException{
+    public void createUser(String firstName, String lastName, String email, 
+            String password, String city) throws SQLException{
         // Establish connection to the database
         dbc.getConnection();
-        // SQL query as a string that updates the users table by inserting the arguments in a new record
-        String query = "INSERT INTO users (firstname, lastname, email, pass, city) VALUES "
+        // SQL query as a string that updates the users table by inserting the 
+        // arguments in a new record
+        String query = "INSERT INTO users (firstname, lastname, email, pass,"
+                + " city) VALUES "
                 + "('" + firstName + 
                 "', '" + lastName + 
                 "', '" + email + 

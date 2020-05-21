@@ -22,33 +22,39 @@ import mykicthengarden.mainMenu.MainMenuView;
  */
 public class MyPlantsController {
 
-    public MyPlantsController(MyPlantsModel myPlantsModel, MyPlantsView myPlantsView, Stage stage) {
+    public MyPlantsController(MyPlantsModel myPlantsModel, MyPlantsView 
+            myPlantsView, Stage stage) {
         
         try {
             //Get the user's plants from model/db and update view
             myPlantsView.addRegisteredPlants(myPlantsModel.getRegisteredPlants());
         } catch (SQLException ex) {
-            Logger.getLogger(MyPlantsController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MyPlantsController.class.getName()).log(Level.SEVERE,
+                    null, ex);
         }
         
         //Back button navigation
         myPlantsView.getBack_button().setOnAction(e -> {
             
-            MainMenuModel mainMenuModel = new MainMenuModel(myPlantsModel.user_id, myPlantsModel.userName);
+            MainMenuModel mainMenuModel = new MainMenuModel(myPlantsModel.user_id,
+                    myPlantsModel.userName);
             MainMenuView mainMenuView = new MainMenuView(myPlantsModel.userName);
             stage.getScene().setRoot(mainMenuView);
-            MainMenuController mainMenuController = new MainMenuController(mainMenuModel, mainMenuView, stage);
+            MainMenuController mainMenuController = new MainMenuController(
+                    mainMenuModel, mainMenuView, stage);
         });
         
         
         
         myPlantsView.getAddPlantButton().setOnAction(e -> {
         
-            AddPlantsModel addPlantsModel = new AddPlantsModel(myPlantsModel.user_id, myPlantsModel.userName);
+            AddPlantsModel addPlantsModel = new AddPlantsModel(
+                    myPlantsModel.user_id, myPlantsModel.userName);
             AddPlantsView addPlantsView = new AddPlantsView();
             //addPlantsModel.setUserId(myPlantsModel.user_id);
             stage.getScene().setRoot(addPlantsView);
-            AddPlantsController addPlantsController = new AddPlantsController(addPlantsModel, addPlantsView, stage);
+            AddPlantsController addPlantsController = new AddPlantsController(
+                    addPlantsModel, addPlantsView, stage);
             
         });
         

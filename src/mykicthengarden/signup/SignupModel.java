@@ -64,6 +64,7 @@ public class SignupModel {
                 "')";
         // Execute the query
         dbc.getMyStmt().executeUpdate(query);
+        dbc.getMyConn().close();
     }
     
 }

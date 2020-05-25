@@ -18,6 +18,7 @@ public class PlantLibraryController {
 
     public PlantLibraryController(PlantLibraryModel plantLibraryModel, PlantLibraryView plantLibraryView, Stage stage) {
         
+        //get the back button from the view and change the stage when pressed
         plantLibraryView.getBack_button().setOnAction(e -> {
             
             MainMenuModel mainMenuModel = new MainMenuModel(plantLibraryModel.user_id, plantLibraryModel.userName);

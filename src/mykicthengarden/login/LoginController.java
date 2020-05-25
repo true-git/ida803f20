@@ -37,15 +37,17 @@ public class LoginController {
                 String email_text = loginView.getEmail_text().getText();
                 String pass = loginView.getPassword_text().getText();
                 
+                //alert the user if the input isnt valid
                 if(email_text.equals("") || loginView.getPassword_text().getText().equals("")) {
                     Alert(Alert.AlertType.ERROR, "Something");
                 }
                 
+                //if the passsword and email is correct. Change the scene to mainmenu
                 if(loginModel.userValidated(email_text, pass)){
                     try {
+                        
                         MainMenuModel mainMenuModel = new MainMenuModel(loginModel.getUserId(email_text), loginModel.getUserName(email_text));
                         MainMenuView mainMenuView = new MainMenuView(loginModel.getUserName(email_text));
-                        System.out.println("user has userID" + loginModel.getUserId(email_text) + "!");
                         stage.getScene().setRoot(mainMenuView);
                         MainMenuController mainMenuController = new MainMenuController(mainMenuModel, mainMenuView, stage);
                     } catch (SQLException ex) {
@@ -53,13 +55,14 @@ public class LoginController {
                     }
                 } else{
                     
+                    //should be an alert to the user
                     System.out.println("Not validated");
                     
                 }
             }
         });
         
-        //get the esignup button and go the signupView when pushed.
+        //get the signup button and go the signupView when pushed.
         loginView.getSignup_button().setOnAction(e -> {
             SignupModel signupModel = new SignupModel();
             SignupView signupView = new SignupView();

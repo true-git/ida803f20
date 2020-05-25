@@ -20,19 +20,6 @@ public class MainMenuModel {
         this.userName = userName;
     }
 
-    public void setUserId(int user_id) {
-        this.user_id = user_id;
-    }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-    
-    public String getFirstName() {
-        
-        return userName;
-    }
-    
-    
     
 }

@@ -45,13 +45,12 @@ public class MyPlantsController {
         });
         
         
-        
+        //get the addPlantButton and and change the scene to addPlantView
         myPlantsView.getAddPlantButton().setOnAction(e -> {
         
             AddPlantsModel addPlantsModel = new AddPlantsModel(
                     myPlantsModel.user_id, myPlantsModel.userName);
             AddPlantsView addPlantsView = new AddPlantsView();
-            //addPlantsModel.setUserId(myPlantsModel.user_id);
             stage.getScene().setRoot(addPlantsView);
             AddPlantsController addPlantsController = new AddPlantsController(
                     addPlantsModel, addPlantsView, stage);
